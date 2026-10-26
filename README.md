@@ -7,10 +7,9 @@
 默认是**莲池**：荷叶与荷花之间，鲤鱼缓缓游动。鼠标划过起涟漪，点击空白处落墨。
 可切换山水、清明上河，保留输入区留白、明暗主题跟随及自动性能降级。
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-dark.png" />
-  <img src="https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-light.png" alt="DSH 新会话页面中的莲池背景，输入区域保持留白" width="634" />
-</picture>
+![莲池动态预览：DSH 实际运行画面，1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
+
+[查看 16:9 静态截图](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · 实际录屏，约 10 秒，默认莲池与 45% 浓度。
 
 ## 兼容性
 

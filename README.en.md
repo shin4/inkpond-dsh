@@ -6,7 +6,9 @@ Interactive Chinese glyph ink-wash backgrounds for DeepSeek Harness.
 The default **lotus pond** has drifting koi, lotus leaves and flowers. Pointer movement makes ripples;
 clicking empty space drops ink. Misty hills and a Qingming handscroll are also included.
 
-![Lotus pond behind the DSH composer](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-light.png)
+![Lotus pond live preview in DSH, 1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
+
+[View the 16:9 still screenshot](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · Actual capture, approximately 10 seconds, with the default lotus scene and 45% strength.
 
 ## Compatibility
 
