@@ -8,8 +8,8 @@
 可切换山水、清明上河，保留输入区留白、明暗主题跟随及自动性能降级。
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/lotus-dark.png" />
-  <img src="docs/images/lotus-light.png" alt="DSH 新会话页面中的莲池背景，输入区域保持留白" width="634" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-dark.png" />
+  <img src="https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-light.png" alt="DSH 新会话页面中的莲池背景，输入区域保持留白" width="634" />
 </picture>
 
 ## 兼容性
