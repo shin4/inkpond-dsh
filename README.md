@@ -30,7 +30,12 @@ dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.1.0.tgz
 刷新页面；若宿主未热加载，重启对应实例。桌面版请使用应用实际 profile 或应用内安装入口，
 不要假定终端的 `web` profile 就是桌面配置。安装包包含构建产物，不执行安装期编译。
 
-npm 包名计划为 `dsh-inkpond`；尚未发布前请使用 Release 安装包。
+也可从 [npm](https://www.npmjs.com/package/dsh-inkpond) 安装已发布的版本：
+
+```bash
+dsh plugin --profile web add dsh-inkpond@0.1.0
+```
+
 GitHub 源码 checkout 需要先 `npm ci && npm run build`，不能直接从未构建源码安装。
 
 ## 使用

@@ -28,7 +28,12 @@ Refresh the page; restart the instance if it does not hot-load. Desktop users sh
 installation UI or its actual profile, which is not necessarily `web`. The tarball is prebuilt and
 does not compile code at installation time.
 
-The intended npm name is `dsh-inkpond`; use the Release tarball until npm publication is available.
+Alternatively, install the published version from [npm](https://www.npmjs.com/package/dsh-inkpond):
+
+```bash
+dsh plugin --profile web add dsh-inkpond@0.1.0
+```
+
 A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences

@@ -18,3 +18,10 @@
   Without npm publication the listing is browse-only. A single added entry passing static review can auto-merge.
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
+
+## v0.1.0 publication status
+
+- npm: `dsh-inkpond@0.1.0` is public. Registry download SHA256 matches the tested GitHub Release tarball: `1a27ce8ec29776a1983e9eedb43dd8fe8154fbd4ed80f6f8ad8161d992c75c4b`.
+- The immutable 0.1.0 tarball contains the pre-publication README; current installation instructions are in the repository and Release notes.
+- 1024 Store submission: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/700
+- dshmarket submission remains pending the minimum repository age of one day.
