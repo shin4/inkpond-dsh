@@ -19,23 +19,45 @@ markers; host layout/API changes need validation before widening compatibility.
 
 ## Install
 
-Download `dsh-inkpond-0.1.0.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases),
-then install the local package through the host plugin manager, or into a regular Web profile:
+### Desktop or Web: use the Add plugin wizard (recommended)
 
-```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.1.0.tgz
-```
+1. Open **Plugins → Add plugin → Install a third-party plugin** in DSH.
+2. Enter the npm package name in the **Package name or address** field:
 
-Refresh the page; restart the instance if it does not hot-load. Desktop users should use the app's
-installation UI or its actual profile, which is not necessarily `web`. The tarball is prebuilt and
-does not compile code at installation time.
+   ```text
+   dsh-inkpond
+   ```
 
-Alternatively, install the published version from [npm](https://www.npmjs.com/package/dsh-inkpond):
+   To pin the current version, enter `dsh-inkpond@0.1.0` instead.
+3. Select **Official npm registry** under the installation registry options, then click **Install**.
+   Mirrors may not have synchronized a newly published version yet.
+4. Start a new empty conversation to see the default lotus pond. If DSH requests a restart,
+   fully quit and reopen the application.
+
+The wizard installs directly from npm, independently of listings in 1024 Store or dshmarket.
+No source checkout or local compilation is needed. The compatibility limits above still apply.
+
+### Install into a Web profile with the CLI
 
 ```bash
 dsh plugin --profile web add dsh-inkpond@0.1.0
 ```
 
+For Desktop, prefer the in-app wizard above, which targets the current application's profile.
+The terminal's `web` profile is not necessarily the Desktop profile.
+The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
+
+### Install a Release tarball
+
+Download `dsh-inkpond-0.1.0.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases).
+Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
+
+```bash
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.1.0.tgz
+```
+
+Refresh the page; restart the instance if it does not hot-load. The tarball is prebuilt and
+does not compile code at installation time.
 A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences

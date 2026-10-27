@@ -19,22 +19,41 @@
 
 ## 安装
 
-从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.1.0.tgz`。
-在 DSH 插件管理页通过本地安装包安装，或使用普通 Web profile：
+### 桌面版或网页版：通过添加插件向导安装（推荐）
 
-```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.1.0.tgz
-```
+1. 打开 DSH 的 **插件 → 添加插件 → 安装第三方插件**（Add plugin）。
+2. 在向导的「包名或地址」输入框中填写 npm 包名：
 
-刷新页面；若宿主未热加载，重启对应实例。桌面版请使用应用实际 profile 或应用内安装入口，
-不要假定终端的 `web` profile 就是桌面配置。安装包包含构建产物，不执行安装期编译。
+   ```text
+   dsh-inkpond
+   ```
 
-也可从 [npm](https://www.npmjs.com/package/dsh-inkpond) 安装已发布的版本：
+   如需固定当前版本，填写 `dsh-inkpond@0.1.0`。
+3. 在「安装源」中选择 **npm 官方源**，点击 **安装**（Install）。新版本可能尚未同步到镜像源。
+4. 安装后新建空白会话，即可看到默认莲池。若宿主提示重启，请完全退出并重新打开 DSH。
+
+此入口直接从 npm 安装，不依赖 1024 Store 或 dshmarket 是否已收录。
+无需下载源码或在本机编译。适用版本仍以本文的兼容性说明为准。
+
+### 使用 CLI 安装到 Web profile
 
 ```bash
 dsh plugin --profile web add dsh-inkpond@0.1.0
 ```
 
+桌面版推荐使用上述应用内向导，它会安装到当前应用的 profile；
+不要假定终端的 `web` profile 就是桌面配置。包发布于 [npm](https://www.npmjs.com/package/dsh-inkpond)。
+
+### 使用 Release 安装包
+
+从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.1.0.tgz`。
+在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
+
+```bash
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.1.0.tgz
+```
+
+刷新页面；若宿主未热加载，重启对应实例。安装包包含构建产物，不执行安装期编译。
 GitHub 源码 checkout 需要先 `npm ci && npm run build`，不能直接从未构建源码安装。
 
 ## 使用
