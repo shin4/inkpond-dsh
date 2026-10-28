@@ -19,6 +19,16 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
+## v0.2.0 publication status — 2026-10-28
+
+- Release commit: `780c620c067de8190135cad2ecc9d9da8e117d34`; GitHub CI passed.
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.2.0
+  Includes `dsh-inkpond-0.2.0.tgz` and `SHA256SUMS`.
+- npm: `dsh-inkpond@0.2.0` is public and the `latest` tag points to 0.2.0.
+- The registry download is byte-for-byte identical to the tested Release tarball.
+  SHA256: `fafbf57d82fc11a24fd3a1479519ea38ffae8d4d6e6e229f2e545cb008637d53`.
+- Final versioned package passed 11 tests, type checking, build and isolated DSH installation/uninstallation.
+
 ## v0.1.0 publication status
 
 - npm: `dsh-inkpond@0.1.0` is public. Registry download SHA256 matches the tested GitHub Release tarball: `1a27ce8ec29776a1983e9eedb43dd8fe8154fbd4ed80f6f8ad8161d992c75c4b`.
