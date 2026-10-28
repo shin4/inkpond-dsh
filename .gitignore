@@ -4,3 +4,5 @@ lib/
 output/
 *.tgz
 .DS_Store
+
+!vendor/inkpond-*.tgz

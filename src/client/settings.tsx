@@ -40,6 +40,8 @@ export function createSettings(store: PreferenceStore) {
 						<option value="qingming">
 							{t("清明上河", "Qingming handscroll")}
 						</option>
+						<option value="jieqi">{t("二十四节气", "24 solar terms")}</option>
+						<option value="beiming">{t("北冥", "Northern sea")}</option>
 					</select>
 				</label>
 				<label>

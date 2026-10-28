@@ -2,9 +2,9 @@
 
 1. Run `npm ci`, `npm run check`, `npm pack`; inspect the package file list and licenses.
 2. Install the exact tarball into an isolated DSH profile; verify activation, scene/theme controls and uninstall.
-3. Commit only source, tests, docs and lockfile. Never include `.local`, host data, credentials or npm logs.
+3. Commit only source, tests, docs, lockfile and the pinned upstream dependency archive. Never include `.local`, host data, credentials or npm logs.
 4. Publish a GitHub tag/release and attach the prebuilt versioned tarball and SHA256SUMS.
-5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.1.0.tgz --access public`.
+5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.2.0.tgz --access public`.
 6. Once npm is verified, update both README install sections with the package-name command.
 7. Submit the prepared catalog entries separately. Recheck upstream contribution rules at submission time.
 

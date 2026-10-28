@@ -1,4 +1,32 @@
-# Verification — 2026-10-26
+# Verification
+
+## Local upstream upgrade — 2026-10-28 (v0.2.0)
+
+- Pinned local upstream commit `c502ef8ba4a898b22f321a5dba3e2255736bc60c`
+  as a separate vendored dependency tarball; provenance and SHA256 are in `vendor/README.md`.
+  npm latest was still 0.1.0; GitHub main was `df88c5cdabdef063ba5022cd5c761def7b4f6ef9`.
+- Added solar terms and Northern sea choices. Defaults remain lotus, new conversations,
+  45% strength and system motion. No change to the declared host version.
+- Clean `npm ci`, `npm run check` passed: type checking, 11 tests and build.
+  New regression cases check scene switching, persistence, still mode and instance cleanup.
+  The real client factory test verifies all five inline fonts and no unresolved import.meta.
+- Fixed offline embedding of the solar-term font at `../../assets/`.
+- `npm pack` produced 11 files with MIT and OFL notices, no host data, credentials,
+  .local files or vendored development archive.
+- Installed the tarball in a fresh `.local/upgrade-dsh-home`, using the official macOS
+  DSH 0.2.1-rc.3 CLI. Cold Web startup on loopback succeeded. Visually checked lotus,
+  solar terms and Northern sea; the composer remained clear. New scenes appeared in
+  native plugin settings. Solar-term selection survived reload; restore defaults worked.
+  No browser warnings or errors were recorded during those scene checks.
+- CLI uninstall succeeded and removed the dependency from the isolated profile.
+- Release version 0.2.0 confirmed by the user. The versioned tarball is checked and
+  installed/uninstalled in an isolated profile before publication.
+- Limits: this upgrade did not repeat dark-theme, forced-colors or all 24 seasonal
+  date checks in the host. Existing long-chat/platform limits below still apply.
+  npm reported 3 development dependency advisories (1 moderate, 2 critical);
+  dependency security remediation was not included in this engine upgrade.
+
+## Original verification — 2026-10-26
 
 Host: official macOS DeepSeek Harness application CLI, DSH 0.2.1-rc.3.
 Testing uses an isolated DSH_HOME and loopback Web listener. No existing user credentials or sessions

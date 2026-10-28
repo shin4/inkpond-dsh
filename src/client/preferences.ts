@@ -1,5 +1,5 @@
 export const STORAGE_KEY = "dsh-inkpond.preferences.v1";
-export const SCENES = ["lotus", "shanshui", "qingming"] as const;
+export const SCENES = ["lotus", "shanshui", "qingming", "jieqi", "beiming"] as const;
 export interface Preferences {
 	enabled: boolean;
 	scene: (typeof SCENES)[number];

@@ -29,7 +29,7 @@ it("loads the actual client artifact through the DSH factory with only shared Re
 	});
 	expect(exports.apply).toBeTypeOf("function");
 	expect(exports.inject).toEqual(["slots"]);
-	expect(source.match(/data:font\/woff2;base64,/g)).toHaveLength(3);
+	expect(source.match(/data:font\/woff2;base64,/g)).toHaveLength(5);
 	expect(source).not.toContain("import_meta");
 	expect(readFileSync("lib/licenses/OFL.txt", "utf8")).toContain(
 		"SIL OPEN FONT LICENSE",

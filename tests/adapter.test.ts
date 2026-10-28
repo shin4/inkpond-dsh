@@ -101,3 +101,22 @@ it("fails closed without a mutation/retry loop if canvas creation fails", async 
 	expect(create).toHaveBeenCalledTimes(2);
 	warn.mockRestore();
 });
+
+it.each(["jieqi", "beiming"] as const)("switches to %s and restores the default without leaking canvases", async (scene) => {
+	const { create, destroy } = fake();
+	dispose = installBackground(store, create);
+	store.update({ scene, motion: "still" });
+	await settle();
+	expect(create.mock.calls.at(-1)).toEqual(expect.arrayContaining([
+		expect.objectContaining({ scene, reducedMotion: true }),
+	]));
+	expect(document.querySelectorAll("canvas")).toHaveLength(1);
+	expect(destroy).toHaveBeenCalledTimes(1);
+	const reloaded = createPreferences(localStorage);
+	expect(reloaded.get().scene).toBe(scene);
+	reloaded.destroy();
+	store.update({ scene: "lotus" });
+	await settle();
+	expect(document.querySelector("canvas")?.dataset.scene).toBe("lotus");
+	expect(destroy).toHaveBeenCalledTimes(2);
+});

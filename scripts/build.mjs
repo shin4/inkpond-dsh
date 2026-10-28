@@ -38,7 +38,7 @@ await build({
 						let contents = await readFile(path, "utf8");
 						const matches = [
 							...contents.matchAll(
-								/new URL\("((?:\.\.\/|\.\/)assets\/[^\"]+\.woff2)", import\.meta\.url\)\.href/g,
+								/new URL\("((?:\.\.\/|\.\/)+assets\/[^\"]+\.woff2)", import\.meta\.url\)\.href/g,
 							),
 						];
 						for (const match of matches) {
