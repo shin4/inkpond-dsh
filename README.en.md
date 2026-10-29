@@ -4,7 +4,7 @@
 
 Interactive Chinese glyph ink-wash backgrounds for DeepSeek Harness.
 The default **lotus pond** has drifting koi, lotus leaves and flowers. Pointer movement makes ripples;
-clicking empty space drops ink. Misty hills, a Qingming handscroll, the 24 solar terms and the Northern sea are also included.
+clicking empty space drops ink. Misty hills, a Qingming handscroll, the 24 solar terms, the Northern sea and Big fat whale are also included.
 
 ![Lotus pond live preview in DSH, 1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
 
@@ -19,6 +19,9 @@ markers; host layout/API changes need validation before widening compatibility.
 
 ## Install
 
+The source version is **0.3.0** (adding Big fat whale), not yet published; the npm / Release commands below still target the published 0.2.0.
+To try 0.3.0 locally, run `npm ci && npm run check && npm pack`, then install the generated `dsh-inkpond-0.3.0.tgz`.
+
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
 1. Open **Plugins → Add plugin → Install a third-party plugin** in DSH.
@@ -28,7 +31,7 @@ markers; host layout/API changes need validation before widening compatibility.
    dsh-inkpond
    ```
 
-   To pin the current version, enter `dsh-inkpond@0.2.0` instead.
+   To pin the published version, enter `dsh-inkpond@0.2.0` instead.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
 4. Start a new empty conversation to see the default lotus pond. If DSH requests a restart,
@@ -62,7 +65,7 @@ A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences
 
-Open Plugins → Installed → dsh-inkpond. Select Lotus pond (default), Misty hills, Qingming handscroll, 24 solar terms (selected by the current date) or Northern sea (waves and a whale);
+Open Plugins → Installed → dsh-inkpond. Select Lotus pond (default), Misty hills, Qingming handscroll, 24 solar terms (selected by the current date), Northern sea (waves and a whale) or Big fat whale (eating rice, spouting grains and reacting to the pointer);
 choose new conversations only (default) or all conversations, toggle color accents, adjust ink strength,
 and select system animation preferences or a still image. All-conversation mode needs further long-chat testing.
 Restore defaults returns to Lotus pond, 45% strength, new conversations only and system motion preferences.
@@ -86,7 +89,7 @@ npm pack
 ```
 
 `check` runs type checking, tests and the build. The tarball contains the Host entry, DSH client factory,
-offline fonts and licenses. React comes from DSH; the renderer is pinned to local inkpond commit `c502ef8ba4a898b22f321a5dba3e2255736bc60c`
+offline fonts and licenses. React comes from DSH; the renderer is pinned to local inkpond commit `4cb32fb1ef9120d4115e47265ad13a13c7fb59f6`
 (an independent dependency tarball; see `vendor/README.md`).
 Test tarballs in a separate `DSH_HOME`. Avoid uninstall tests in a daily profile. DSH local-link removal
 was observed cleaning the linked target's development dependencies, so use tarballs for acceptance testing.

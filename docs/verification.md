@@ -1,5 +1,29 @@
 # Verification
 
+## Upstream upgrade — 2026-10-29 (v0.3.0)
+
+- Pinned inkpond commit `4cb32fb1ef9120d4115e47265ad13a13c7fb59f6`, verified
+  against GitHub main, as a separate archive built from a clean `git archive`.
+  Added Big fat whale (`dafeijing`) as the sixth scene; provenance is in `vendor/README.md`.
+- Defaults and `engines.dsh` remain unchanged. Six font subsets are embedded offline.
+- `npm run check` passed: type checking, 12 tests and build. The scene lifecycle
+  regression now covers Big fat whale persistence, still-mode forwarding, switching
+  back to lotus and instance cleanup. The actual client factory loads all six fonts.
+- `npm pack` contains 11 files, including upstream MIT and font OFL notices;
+  no local profiles, credentials, sessions or development dependency archive.
+- Installed the tarball into fresh `.local/verify-0.3.0` with the official macOS
+  DSH 0.2.1-rc.3 CLI. Loopback Web cold startup succeeded; the native Plugins page
+  showed v0.3.0 running with all six scenes. Big fat whale selection persisted
+  after reload; its canvas rendered in the new conversation with the composer clear.
+  No browser warnings/errors were recorded. No credentials or model calls were used.
+- After final README/description punctuation edits, repacked and reinstalled the final
+  tarball; its installed client and license files matched the build byte-for-byte.
+  Uninstall removed the dependency and bundle entry. The test host was stopped.
+- Final tarball SHA256: `5276a0bf3adc1bd9caa19b851344aecfd7d85b29d1483524ef60595150d0735a`.
+- Limits: this pass did not verify the full feeding animation cycle, light theme,
+  forced colors, long conversations or other host versions. Existing limits below apply.
+  Version 0.3.0 has not been published by this change.
+
 ## Local upstream upgrade — 2026-10-28 (v0.2.0)
 
 - Pinned local upstream commit `c502ef8ba4a898b22f321a5dba3e2255736bc60c`

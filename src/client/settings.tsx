@@ -42,6 +42,7 @@ export function createSettings(store: PreferenceStore) {
 						</option>
 						<option value="jieqi">{t("二十四节气", "24 solar terms")}</option>
 						<option value="beiming">{t("北冥", "Northern sea")}</option>
+						<option value="dafeijing">{t("大肥鲸", "Big fat whale")}</option>
 					</select>
 				</label>
 				<label>

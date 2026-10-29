@@ -102,7 +102,7 @@ it("fails closed without a mutation/retry loop if canvas creation fails", async 
 	warn.mockRestore();
 });
 
-it.each(["jieqi", "beiming"] as const)("switches to %s and restores the default without leaking canvases", async (scene) => {
+it.each(["jieqi", "beiming", "dafeijing"] as const)("switches to %s and restores the default without leaking canvases", async (scene) => {
 	const { create, destroy } = fake();
 	dispose = installBackground(store, create);
 	store.update({ scene, motion: "still" });

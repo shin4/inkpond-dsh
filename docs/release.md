@@ -4,7 +4,7 @@
 2. Install the exact tarball into an isolated DSH profile; verify activation, scene/theme controls and uninstall.
 3. Commit only source, tests, docs, lockfile and the pinned upstream dependency archive. Never include `.local`, host data, credentials or npm logs.
 4. Publish a GitHub tag/release and attach the prebuilt versioned tarball and SHA256SUMS.
-5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.2.0.tgz --access public`.
+5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.3.0.tgz --access public`.
 6. Once npm is verified, update both README install sections with the package-name command.
 7. Submit the prepared catalog entries separately. Recheck upstream contribution rules at submission time.
 
@@ -18,6 +18,13 @@
   Without npm publication the listing is browse-only. A single added entry passing static review can auto-merge.
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
+
+## v0.3.0 preparation — 2026-10-29
+
+- Source, lockfile and bundled build metadata are 0.3.0.
+- Adds Big fat whale from pinned upstream commit `4cb32fb1ef9120d4115e47265ad13a13c7fb59f6`.
+- Checks, packaging and isolated host install/uninstall passed; see `docs/verification.md`.
+- Local artifact: `output/dsh-inkpond-0.3.0.tgz`. No tag, GitHub Release or npm publication yet.
 
 ## v0.2.0 publication status — 2026-10-28
 
