@@ -19,12 +19,18 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
-## v0.3.1 preparation — 2026-10-29
+## v0.3.1 publication status — 2026-10-29
 
 - Default scene and Restore defaults now use Big fat whale; existing saved scene choices remain intact.
 - Engine pin, host compatibility, new-conversation scope and 45% strength are unchanged.
 - Type checking, 12 tests, build, packaging and isolated DSH install/uninstall passed.
-- Not committed or published yet. Local package: `output/dsh-inkpond-0.3.1.tgz`.
+- Release commit: `fafcfdb9ac07ed05fe1933b275fdb9366207798d`; GitHub CI passed.
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.1
+  Includes the tested tarball and SHA256SUMS-0.3.1; downloaded bytes match.
+  SHA256: `264a23cb481334d75e6cf2a18f4984174684a25765c67d04db686efddbcfad3b`.
+- npm `dsh-inkpond@0.3.1` is public; `latest` points to 0.3.1.
+  The downloaded registry tarball matches the tested Release artifact byte-for-byte.
+- The immutable tarball contains the pre-publication README; current status is recorded here.
 
 ## v0.3.0 publication status — 2026-10-29
 

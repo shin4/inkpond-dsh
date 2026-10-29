@@ -19,8 +19,7 @@
 
 ## 安装
 
-当前源码为 **0.3.1**（默认场景改为大肥鲸），尚未发布。以下 npm / Release 命令仍安装已发布的 **0.3.0**，其默认场景为莲池。
-本地体验 0.3.1：运行 `npm ci && npm run check && npm pack`，再安装生成的 `dsh-inkpond-0.3.1.tgz`。
+**0.3.1**（默认场景改为大肥鲸）已发布至 npm 和 GitHub Releases，可通过包名或下方安装包安装。
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
@@ -31,9 +30,9 @@
    dsh-inkpond
    ```
 
-   如需固定已发布版本，填写 `dsh-inkpond@0.3.0`。
+   如需固定已发布版本，填写 `dsh-inkpond@0.3.1`。
 3. 在「安装源」中选择 **npm 官方源**，点击 **安装**（Install）。新版本可能尚未同步到镜像源。
-4. 安装后新建空白会话，即可看到该已发布版本的默认莲池。若宿主提示重启，请完全退出并重新打开 DSH。
+4. 安装后新建空白会话，首次安装即可看到默认大肥鲸；已有保存偏好的客户端会保留原选择。若宿主提示重启，请完全退出并重新打开 DSH。
 
 此入口直接从 npm 安装，不依赖 1024 Store 或 dshmarket 是否已收录。
 无需下载源码或在本机编译。适用版本仍以本文的兼容性说明为准。
@@ -41,7 +40,7 @@
 ### 使用 CLI 安装到 Web profile
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.0
+dsh plugin --profile web add dsh-inkpond@0.3.1
 ```
 
 桌面版推荐使用上述应用内向导，它会安装到当前应用的 profile；
@@ -49,11 +48,11 @@ dsh plugin --profile web add dsh-inkpond@0.3.0
 
 ### 使用 Release 安装包
 
-从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.3.0.tgz`。
+从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.3.1.tgz`。
 在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.0.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.1.tgz
 ```
 
 刷新页面；若宿主未热加载，重启对应实例。安装包包含构建产物，不执行安装期编译。

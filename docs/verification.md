@@ -15,7 +15,7 @@
   Uninstall removed both the dependency and bundle entry.
 - SHA256: `264a23cb481334d75e6cf2a18f4984174684a25765c67d04db686efddbcfad3b`.
 - This patch did not repeat browser visual/interaction checks or expand host support.
-  The 0.3.1 package is local and has not been published.
+  GitHub Release 0.3.1 is published; npm status is tracked in `docs/release.md`.
 
 ## Upstream upgrade — 2026-10-29 (v0.3.0)
 

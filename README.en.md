@@ -19,8 +19,7 @@ markers; host layout/API changes need validation before widening compatibility.
 
 ## Install
 
-The source version is **0.3.1** (Big fat whale by default), not yet published. The npm / Release commands below install the published **0.3.0**, which defaults to Lotus pond.
-To try 0.3.1 locally, run `npm ci && npm run check && npm pack`, then install the generated `dsh-inkpond-0.3.1.tgz`.
+**0.3.1** (Big fat whale by default) is available on npm and GitHub Releases; install by package name or use the tarball below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -31,10 +30,10 @@ To try 0.3.1 locally, run `npm ci && npm run check && npm pack`, then install th
    dsh-inkpond
    ```
 
-   To pin the published version, enter `dsh-inkpond@0.3.0` instead.
+   To pin the published version, enter `dsh-inkpond@0.3.1` instead.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
-4. Start a new empty conversation to see the published version’s default lotus pond. If DSH requests a restart,
+4. Start a new empty conversation to see Big fat whale on a fresh install; existing saved scene choices are preserved. If DSH requests a restart,
    fully quit and reopen the application.
 
 The wizard installs directly from npm, independently of listings in 1024 Store or dshmarket.
@@ -43,7 +42,7 @@ No source checkout or local compilation is needed. The compatibility limits abov
 ### Install into a Web profile with the CLI
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.0
+dsh plugin --profile web add dsh-inkpond@0.3.1
 ```
 
 For Desktop, prefer the in-app wizard above, which targets the current application's profile.
@@ -52,11 +51,11 @@ The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
 
 ### Install a Release tarball
 
-Download `dsh-inkpond-0.3.0.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases).
+Download `dsh-inkpond-0.3.1.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases).
 Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.0.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.1.tgz
 ```
 
 Refresh the page; restart the instance if it does not hot-load. The tarball is prebuilt and
