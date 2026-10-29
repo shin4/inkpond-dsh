@@ -19,8 +19,8 @@
 
 ## 安装
 
-当前源码版本为 **0.3.0**（新增大肥鲸），尚未发布；以下 npm / Release 命令仍指向已发布的 0.2.0。
-本地体验 0.3.0：运行 `npm ci && npm run check && npm pack`，再安装生成的 `dsh-inkpond-0.3.0.tgz`。
+**0.3.0**（新增大肥鲸）已发布至 GitHub Releases，可通过下方安装包安装。
+npm 0.3.0 发布待完成；下方 npm 命令仍指向已发布的 0.2.0。
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
@@ -49,11 +49,11 @@ dsh plugin --profile web add dsh-inkpond@0.2.0
 
 ### 使用 Release 安装包
 
-从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.2.0.tgz`。
+从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.3.0.tgz`。
 在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.2.0.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.0.tgz
 ```
 
 刷新页面；若宿主未热加载，重启对应实例。安装包包含构建产物，不执行安装期编译。

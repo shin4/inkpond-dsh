@@ -19,8 +19,8 @@ markers; host layout/API changes need validation before widening compatibility.
 
 ## Install
 
-The source version is **0.3.0** (adding Big fat whale), not yet published; the npm / Release commands below still target the published 0.2.0.
-To try 0.3.0 locally, run `npm ci && npm run check && npm pack`, then install the generated `dsh-inkpond-0.3.0.tgz`.
+**0.3.0** (adding Big fat whale) is available on GitHub Releases; install its tarball below.
+npm 0.3.0 publication is pending, so the npm commands below still target the published 0.2.0.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -52,11 +52,11 @@ The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
 
 ### Install a Release tarball
 
-Download `dsh-inkpond-0.2.0.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases).
+Download `dsh-inkpond-0.3.0.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases).
 Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.2.0.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.0.tgz
 ```
 
 Refresh the page; restart the instance if it does not hot-load. The tarball is prebuilt and

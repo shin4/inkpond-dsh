@@ -22,7 +22,7 @@
 - Final tarball SHA256: `5276a0bf3adc1bd9caa19b851344aecfd7d85b29d1483524ef60595150d0735a`.
 - Limits: this pass did not verify the full feeding animation cycle, light theme,
   forced colors, long conversations or other host versions. Existing limits below apply.
-  Version 0.3.0 has not been published by this change.
+  GitHub Release 0.3.0 is published; npm status is tracked in `docs/release.md`.
 
 ## Local upstream upgrade — 2026-10-28 (v0.2.0)
 

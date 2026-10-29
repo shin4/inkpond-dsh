@@ -19,12 +19,20 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
-## v0.3.0 preparation — 2026-10-29
+## v0.3.0 publication status — 2026-10-29
 
 - Source, lockfile and bundled build metadata are 0.3.0.
 - Adds Big fat whale from pinned upstream commit `4cb32fb1ef9120d4115e47265ad13a13c7fb59f6`.
 - Checks, packaging and isolated host install/uninstall passed; see `docs/verification.md`.
-- Local artifact: `output/dsh-inkpond-0.3.0.tgz`. No tag, GitHub Release or npm publication yet.
+- Release commit: `dae462108350ccd29e235de9e37301de911e9512`; GitHub CI passed.
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.0
+  Includes the tested `dsh-inkpond-0.3.0.tgz` and `SHA256SUMS`; downloaded bytes match.
+  SHA256: `5276a0bf3adc1bd9caa19b851344aecfd7d85b29d1483524ef60595150d0735a`.
+- npm 0.3.0 publication is pending login renewal. npm installation still uses 0.2.0.
+- The immutable tarball includes the pre-publication README; current status is here and in the repository READMEs.
+- dshmarket update: https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10406
+- 1024 Store update: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/733
+  Updated the existing PR to six scenes; static review passed, maintainer merge required.
 
 ## v0.2.0 publication status — 2026-10-28
 
