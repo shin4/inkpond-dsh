@@ -19,8 +19,7 @@ markers; host layout/API changes need validation before widening compatibility.
 
 ## Install
 
-**0.3.0** (adding Big fat whale) is available on GitHub Releases; install its tarball below.
-npm 0.3.0 publication is pending, so the npm commands below still target the published 0.2.0.
+**0.3.0** (adding Big fat whale) is available on npm and GitHub Releases; install by package name or use the tarball below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -31,7 +30,7 @@ npm 0.3.0 publication is pending, so the npm commands below still target the pub
    dsh-inkpond
    ```
 
-   To pin the published version, enter `dsh-inkpond@0.2.0` instead.
+   To pin the published version, enter `dsh-inkpond@0.3.0` instead.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
 4. Start a new empty conversation to see the default lotus pond. If DSH requests a restart,
@@ -43,7 +42,7 @@ No source checkout or local compilation is needed. The compatibility limits abov
 ### Install into a Web profile with the CLI
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.2.0
+dsh plugin --profile web add dsh-inkpond@0.3.0
 ```
 
 For Desktop, prefer the in-app wizard above, which targets the current application's profile.

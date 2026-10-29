@@ -28,11 +28,15 @@ Do not edit either catalog's generated READMEs. Prepared entries live in `docs/m
 - GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.0
   Includes the tested `dsh-inkpond-0.3.0.tgz` and `SHA256SUMS`; downloaded bytes match.
   SHA256: `5276a0bf3adc1bd9caa19b851344aecfd7d85b29d1483524ef60595150d0735a`.
-- npm 0.3.0 publication is pending login renewal. npm installation still uses 0.2.0.
+- npm: `dsh-inkpond@0.3.0` is public and `latest` points to 0.3.0.
+  Downloaded registry bytes match the tested GitHub Release tarball and SHA256 above.
 - The immutable tarball includes the pre-publication README; current status is here and in the repository READMEs.
 - dshmarket update: https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/10406
+  Both PR check and Submission gate passed; maintainer merge is pending.
+  The live storefront still links the 0.2.0 tarball.
 - 1024 Store update: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/733
   Updated the existing PR to six scenes; static review passed, maintainer merge required.
+  The live detail API reads manifest version 0.3.0, but its catalog description still lists three scenes.
 
 ## v0.2.0 publication status — 2026-10-28
 
