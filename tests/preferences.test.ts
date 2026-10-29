@@ -7,8 +7,10 @@ import {
 	STORAGE_KEY,
 } from "../src/client/preferences";
 describe("preferences", () => {
-	it("defaults to lotus and rejects corrupt or unexpected values", () => {
+	it("defaults to Big fat whale and rejects corrupt or unexpected values", () => {
 		expect(normalize(null)).toEqual(DEFAULTS);
+		expect(normalize(null).scene).toBe("dafeijing");
+		expect(normalize({ scene: "lotus" }).scene).toBe("lotus");
 		expect(
 			normalize({
 				scene: "unknown",

@@ -3,12 +3,12 @@
 [简体中文](README.md)
 
 Interactive Chinese glyph ink-wash backgrounds for DeepSeek Harness.
-The default **lotus pond** has drifting koi, lotus leaves and flowers. Pointer movement makes ripples;
-clicking empty space drops ink. Misty hills, a Qingming handscroll, the 24 solar terms, the Northern sea and Big fat whale are also included.
+The default **Big fat whale** swims through glyph waves, eats rice, spouts grains and reacts to the pointer.
+Lotus pond, Misty hills, a Qingming handscroll, the 24 solar terms and the Northern sea are also included.
 
 ![Lotus pond live preview in DSH, 1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
 
-[View the 16:9 still screenshot](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · Actual capture, approximately 10 seconds, with the default lotus scene and 45% strength.
+[View the 16:9 still screenshot](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · Actual capture, approximately 10 seconds, with the lotus scene and 45% strength (not the current default).
 
 ## Compatibility
 
@@ -19,7 +19,8 @@ markers; host layout/API changes need validation before widening compatibility.
 
 ## Install
 
-**0.3.0** (adding Big fat whale) is available on npm and GitHub Releases; install by package name or use the tarball below.
+The source version is **0.3.1** (Big fat whale by default), not yet published. The npm / Release commands below install the published **0.3.0**, which defaults to Lotus pond.
+To try 0.3.1 locally, run `npm ci && npm run check && npm pack`, then install the generated `dsh-inkpond-0.3.1.tgz`.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -33,7 +34,7 @@ markers; host layout/API changes need validation before widening compatibility.
    To pin the published version, enter `dsh-inkpond@0.3.0` instead.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
-4. Start a new empty conversation to see the default lotus pond. If DSH requests a restart,
+4. Start a new empty conversation to see the published version’s default lotus pond. If DSH requests a restart,
    fully quit and reopen the application.
 
 The wizard installs directly from npm, independently of listings in 1024 Store or dshmarket.
@@ -64,10 +65,12 @@ A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences
 
-Open Plugins → Installed → dsh-inkpond. Select Lotus pond (default), Misty hills, Qingming handscroll, 24 solar terms (selected by the current date), Northern sea (waves and a whale) or Big fat whale (eating rice, spouting grains and reacting to the pointer);
+The following describes 0.3.1. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
+
+Open Plugins → Installed → dsh-inkpond. Select Lotus pond, Misty hills, Qingming handscroll, 24 solar terms (selected by the current date), Northern sea (waves and a whale) or Big fat whale (default; eating rice, spouting grains and reacting to the pointer);
 choose new conversations only (default) or all conversations, toggle color accents, adjust ink strength,
 and select system animation preferences or a still image. All-conversation mode needs further long-chat testing.
-Restore defaults returns to Lotus pond, 45% strength, new conversations only and system motion preferences.
+Restore defaults returns to Big fat whale, 45% strength, new conversations only and system motion preferences.
 
 The canvas passes through clicks and never controls typing or sending. Hidden pages pause animation;
 reduced motion produces a still image, and forced colors hides the decoration. Weak devices downgrade automatically.

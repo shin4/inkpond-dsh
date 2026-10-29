@@ -10,7 +10,7 @@ export interface Preferences {
 }
 export const DEFAULTS: Readonly<Preferences> = Object.freeze({
 	enabled: true,
-	scene: "lotus",
+	scene: "dafeijing",
 	scope: "empty",
 	tint: true,
 	strength: 0.45,

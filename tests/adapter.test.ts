@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
 import { installBackground, AVOID } from "../src/client/adapter";
-import { createPreferences } from "../src/client/preferences";
+import { createPreferences, DEFAULTS } from "../src/client/preferences";
 let dispose: (() => void) | undefined;
 let store: ReturnType<typeof createPreferences>;
 const settle = async () => {
@@ -35,12 +35,12 @@ function fake() {
 	}));
 	return { destroy, create };
 }
-it("mounts lotus once, avoids controls, and retracts everything on unload", async () => {
+it("mounts Big fat whale once, avoids controls, and retracts everything on unload", async () => {
 	const { create, destroy } = fake();
 	dispose = installBackground(store, create);
 	expect(create).toHaveBeenCalledTimes(1);
 	expect(create.mock.calls[0]).toEqual(
-		expect.arrayContaining([expect.objectContaining({ scene: "lotus" })]),
+		expect.arrayContaining([expect.objectContaining({ scene: "dafeijing" })]),
 	);
 	document.querySelector("button")!.textContent = "Send now";
 	await settle();
@@ -102,7 +102,7 @@ it("fails closed without a mutation/retry loop if canvas creation fails", async 
 	warn.mockRestore();
 });
 
-it.each(["jieqi", "beiming", "dafeijing"] as const)("switches to %s and restores the default without leaking canvases", async (scene) => {
+it.each(["jieqi", "beiming", "lotus"] as const)("switches to %s and restores the default without leaking canvases", async (scene) => {
 	const { create, destroy } = fake();
 	dispose = installBackground(store, create);
 	store.update({ scene, motion: "still" });
@@ -115,8 +115,8 @@ it.each(["jieqi", "beiming", "dafeijing"] as const)("switches to %s and restores
 	const reloaded = createPreferences(localStorage);
 	expect(reloaded.get().scene).toBe(scene);
 	reloaded.destroy();
-	store.update({ scene: "lotus" });
+	store.update(DEFAULTS);
 	await settle();
-	expect(document.querySelector("canvas")?.dataset.scene).toBe("lotus");
+	expect(document.querySelector("canvas")?.dataset.scene).toBe("dafeijing");
 	expect(destroy).toHaveBeenCalledTimes(2);
 });

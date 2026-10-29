@@ -1,5 +1,22 @@
 # Verification
 
+## Default scene update — 2026-10-29 (v0.3.1)
+
+- Default scene and Restore defaults use Big fat whale (`dafeijing`). Existing
+  saved scene choices are preserved; the storage key and normalization contract
+  remain unchanged. Engine pin and declared host compatibility are unchanged.
+- `npm run check` passed: type checking, 12 tests and build. Existing tests now
+  assert Big fat whale on a fresh client, retention of a saved lotus choice,
+  and switching back to the full defaults with instance cleanup.
+- `npm pack` produced 11 files with version 0.3.1 in package/build metadata,
+  six embedded fonts and MIT/OFL notices, without local host data.
+- Installed the exact tarball into fresh `.local/verify-0.3.1` using the official
+  macOS DSH 0.2.1-rc.3 CLI; the installed client matched the build byte-for-byte.
+  Uninstall removed both the dependency and bundle entry.
+- SHA256: `264a23cb481334d75e6cf2a18f4984174684a25765c67d04db686efddbcfad3b`.
+- This patch did not repeat browser visual/interaction checks or expand host support.
+  The 0.3.1 package is local and has not been published.
+
 ## Upstream upgrade — 2026-10-29 (v0.3.0)
 
 - Pinned inkpond commit `4cb32fb1ef9120d4115e47265ad13a13c7fb59f6`, verified
