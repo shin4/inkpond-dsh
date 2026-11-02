@@ -42,7 +42,8 @@
 - Limits: rc.3 received installation regression only in this pass; prior visual
   validation still applies. No native desktop-shell, Windows/Linux, real model
   streaming, long-chat or full animation-cycle validation was added.
-- Local package only; 0.3.2 has not been published to npm or GitHub Releases.
+- Published to npm and GitHub Releases. Both downloaded tarballs match the tested
+  artifact byte-for-byte; publication details are in `docs/release.md`.
 
 ## Default scene update — 2026-10-29 (v0.3.1)
 

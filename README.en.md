@@ -22,8 +22,7 @@ host API/layout changes may still require updates.
 ## Install
 
 **0.3.2** fixes rejection by DSH 0.2.1-rc.5 due to the old compatibility declaration. Big fat whale remains the default.
-This is a local, unpublished version; **0.3.1** is the published npm/GitHub release.
-Until publication, install the locally built `dsh-inkpond-0.3.2.tgz`; package-name installation does not yet include this fix.
+**0.3.2 is published on npm and GitHub Releases**; install by package name or use the tarball below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -34,7 +33,7 @@ Until publication, install the locally built `dsh-inkpond-0.3.2.tgz`; package-na
    dsh-inkpond
    ```
 
-   After 0.3.2 is published, enter `dsh-inkpond@0.3.2` to pin that version.
+   To pin this version, enter `dsh-inkpond@0.3.2`.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
 4. Start a new empty conversation to see Big fat whale on a fresh install; existing saved scene choices are preserved. If DSH requests a restart,
@@ -55,8 +54,7 @@ The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
 
 ### Install a Release tarball
 
-Before publication, run `npm ci && npm pack` to build `dsh-inkpond-0.3.2.tgz`.
-After publication, download it from [Releases](https://github.com/shin4/inkpond-dsh/releases).
+Download `dsh-inkpond-0.3.2.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.2).
 Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
 
 ```bash

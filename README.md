@@ -20,8 +20,7 @@
 ## 安装
 
 **0.3.2** 修复 DSH 0.2.1-rc.5 被旧兼容性声明拒绝加载的问题，默认场景仍为大肥鲸。
-当前为本地待发布版本；npm 和 GitHub Releases 上已发布的版本为 **0.3.1**。
-发布前请使用本地构建的 `dsh-inkpond-0.3.2.tgz`，包名安装尚不能获取本次修复。
+**0.3.2 已发布至 npm 和 GitHub Releases**，可通过包名或下方安装包安装。
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
@@ -32,7 +31,7 @@
    dsh-inkpond
    ```
 
-   0.3.2 发布后可填写 `dsh-inkpond@0.3.2` 固定版本。
+   如需固定版本，填写 `dsh-inkpond@0.3.2`。
 3. 在「安装源」中选择 **npm 官方源**，点击 **安装**（Install）。新版本可能尚未同步到镜像源。
 4. 安装后新建空白会话，首次安装即可看到默认大肥鲸；已有保存偏好的客户端会保留原选择。若宿主提示重启，请完全退出并重新打开 DSH。
 
@@ -50,8 +49,7 @@ dsh plugin --profile web add dsh-inkpond@0.3.2
 
 ### 使用 Release 安装包
 
-发布前运行 `npm ci && npm pack` 生成 `dsh-inkpond-0.3.2.tgz`；发布后可从
-[GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载同名安装包。
+从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.2) 下载 `dsh-inkpond-0.3.2.tgz`。
 在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
 
 ```bash

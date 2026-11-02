@@ -19,19 +19,24 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
-## v0.3.2 local validation status — 2026-11-02
+## v0.3.2 publication status — 2026-11-02
 
 - Fixes rc.5 compatibility rejection; uses `engines.dsh: >=0.2.1-rc.3` with no
   upper bound, as requested. Actual host validation remains rc.3 and rc.5.
   Future prerelease/stable matching was checked with the real rc.5 evaluator.
 - Type checking, 12 tests, build, package inspection, isolated rc.3/rc.5
   install/uninstall and rc.5 browser validation passed; see `docs/verification.md`.
-- Local artifact: `dsh-inkpond-0.3.2.tgz`.
+- Release artifact: `dsh-inkpond-0.3.2.tgz`.
   SHA256: `d895e4c9e33a1e8f0d0184c114e4e69f1103aa33bb90e3fd453e56adb281f168`.
-- Validation complete; publication pending. npm `latest` was checked and remains 0.3.1.
-  Both READMEs identify 0.3.2 as a local, unpublished build.
-- The prepared market tarball URL still points to published 0.3.1; update it to
-  0.3.2 only after the corresponding GitHub Release artifact exists.
+- Release commit: `6280ac05722b2b8b411e819e42524cc4a23f4b7c`; GitHub CI passed.
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.2
+  Includes the tested tarball and SHA256SUMS-0.3.2; downloaded bytes match.
+- npm `dsh-inkpond@0.3.2` is public; `latest` points to 0.3.2.
+  The registry tarball matches the tested Release artifact byte-for-byte.
+- The immutable tarball contains the pre-publication README; current installation
+  status is recorded here and in both repository READMEs.
+- Updated the prepared market tarball URL to 0.3.2; external catalog submissions
+  are separate from this package release.
 
 ## v0.3.1 publication status — 2026-10-29
 
