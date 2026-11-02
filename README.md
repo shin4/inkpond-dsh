@@ -13,13 +13,15 @@
 
 ## 兼容性
 
-首版验证基线为 **DSH 0.2.1-rc.3**（macOS 官方桌面应用携带的内核，隔离 Web profile）。
-`engines.dsh` 暂时固定该版本；其他版本及 Windows/Linux 尚未验证。
-插件依赖会话容器的语义 DOM 标记，宿主 API 或布局改变时需要重新验证后扩大版本范围。
+安装要求为 **DSH >=0.2.1-rc.3**，不设上限，后续 rc 和正式版不会因精确版本锁定而被拒绝。
+已实测 **0.2.1-rc.3 和 0.2.1-rc.5**（macOS，隔离 Web profile）；其他版本及 Windows/Linux 尚未验证。
+允许安装不等于已验证兼容。插件依赖会话容器的语义 DOM 标记；未知布局不会挂载背景，宿主 API 或布局变更仍可能需要适配。
 
 ## 安装
 
-**0.3.1**（默认场景改为大肥鲸）已发布至 npm 和 GitHub Releases，可通过包名或下方安装包安装。
+**0.3.2** 修复 DSH 0.2.1-rc.5 被旧兼容性声明拒绝加载的问题，默认场景仍为大肥鲸。
+当前为本地待发布版本；npm 和 GitHub Releases 上已发布的版本为 **0.3.1**。
+发布前请使用本地构建的 `dsh-inkpond-0.3.2.tgz`，包名安装尚不能获取本次修复。
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
@@ -30,7 +32,7 @@
    dsh-inkpond
    ```
 
-   如需固定已发布版本，填写 `dsh-inkpond@0.3.1`。
+   0.3.2 发布后可填写 `dsh-inkpond@0.3.2` 固定版本。
 3. 在「安装源」中选择 **npm 官方源**，点击 **安装**（Install）。新版本可能尚未同步到镜像源。
 4. 安装后新建空白会话，首次安装即可看到默认大肥鲸；已有保存偏好的客户端会保留原选择。若宿主提示重启，请完全退出并重新打开 DSH。
 
@@ -40,7 +42,7 @@
 ### 使用 CLI 安装到 Web profile
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.1
+dsh plugin --profile web add dsh-inkpond@0.3.2
 ```
 
 桌面版推荐使用上述应用内向导，它会安装到当前应用的 profile；
@@ -48,19 +50,21 @@ dsh plugin --profile web add dsh-inkpond@0.3.1
 
 ### 使用 Release 安装包
 
-从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载 `dsh-inkpond-0.3.1.tgz`。
+发布前运行 `npm ci && npm pack` 生成 `dsh-inkpond-0.3.2.tgz`；发布后可从
+[GitHub Releases](https://github.com/shin4/inkpond-dsh/releases) 下载同名安装包。
 在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.1.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.2.tgz
 ```
 
+从 0.1.0 升级时，按宿主提示先卸载旧插件，再安装 0.3.2 安装包。外观偏好会保留。
 刷新页面；若宿主未热加载，重启对应实例。安装包包含构建产物，不执行安装期编译。
 GitHub 源码 checkout 需要先 `npm ci && npm run build`，不能直接从未构建源码安装。
 
 ## 使用
 
-插件 → 已安装 → dsh-inkpond（以下为 0.3.1 行为）：
+插件 → 已安装 → dsh-inkpond（以下为 0.3.2 行为）：
 
 已有客户端保存的场景选择会保留；无保存偏好的客户端和“恢复默认”使用大肥鲸。
 

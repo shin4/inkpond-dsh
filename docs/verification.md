@@ -1,5 +1,49 @@
 # Verification
 
+## DSH rc.5 compatibility fix — 2026-11-02 (v0.3.2)
+
+- Reproduced rc.5 rejecting the original 0.1.0 tarball because its
+  `engines.dsh` requires exactly 0.2.1-rc.3. The host rolled back installation.
+  This was a compatibility gate rejection; no plugin crash or data loss was observed.
+- Changed package/lockfile version to 0.3.2. At the user's request, the final
+  `engines.dsh` is `>=0.2.1-rc.3`, with no upper bound. Forward installation
+  eligibility is separate from the actually tested rc.3/rc.5 hosts. Updated
+  AGENTS.md to retain that policy. The adapter, pinned engine, defaults and
+  preference keys are unchanged.
+- `npm run check` passed: type checking, all 12 tests and build.
+- `npm pack` produced 11 files. Checked package and build version, exact host
+  declaration, six embedded fonts, plugin/upstream MIT and font OFL notices.
+  No local host data, output, credentials or development dependencies are included.
+- Installed this exact tarball with official npm DSH 0.2.1-rc.5 in isolated
+  `.local/verify-0.3.2-rc.5`, without an exact-version exemption. Cold startup on
+  loopback succeeded; the native Plugins page showed v0.3.2 running and all six scenes.
+- In Chrome, visually checked default Big fat whale and composer whitespace.
+  Typed text into the real composer without sending; canvas pointer events remain
+  `none`. The semantic chat/hero markers and composer avoidance remain compatible.
+- Switched to lotus and still mode through native settings. Both preferences and
+  the lotus canvas survived reload. Forced colors set the canvas display to `none`.
+  Restore defaults returned Big fat whale, 45%, new conversations only and system motion.
+- Native plugin disable removed canvas, style, host and avoidance markers (all zero).
+  Browser console reported no warnings or errors. No credentials or model calls were used.
+- Installed the same tarball with the macOS Desktop-bundled DSH 0.2.1-rc.3 CLI in
+  isolated `.local/verify-0.3.2-rc.3`. Installed client bytes matched the build on both
+  hosts. Native CLI uninstall removed the dependency and bundle on both hosts;
+  the rc.5 test server and browser were stopped.
+- After changing only compatibility metadata/docs, repacked and installed the final
+  tarball into fresh `.local/verify-0.3.2-forward-rc.3` and
+  `.local/verify-0.3.2-forward-rc.5`. Both installed manifests have the minimum-only
+  range; client/host/build metadata/license bytes match the final artifact. Both
+  uninstalls removed dependency and bundle. The browser-tested runtime code is unchanged.
+- Tested the actual rc.5 `evaluatePluginCompatibility` function: rc.3, rc.4, rc.5,
+  rc.6, 0.2.1, 0.2.2-rc.1, 0.3.0-rc.1, 0.3.0 and 1.0.0 pass the version gate;
+  0.2.0 and 0.2.1-rc.2 are rejected. Future-version inputs test matching rules only,
+  not real future-host compatibility. DSH currently includes prereleases in matching.
+- Final tarball SHA256: `d895e4c9e33a1e8f0d0184c114e4e69f1103aa33bb90e3fd453e56adb281f168`.
+- Limits: rc.3 received installation regression only in this pass; prior visual
+  validation still applies. No native desktop-shell, Windows/Linux, real model
+  streaming, long-chat or full animation-cycle validation was added.
+- Local package only; 0.3.2 has not been published to npm or GitHub Releases.
+
 ## Default scene update — 2026-10-29 (v0.3.1)
 
 - Default scene and Restore defaults use Big fat whale (`dafeijing`). Existing

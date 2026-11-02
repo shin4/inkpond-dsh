@@ -12,14 +12,18 @@ Lotus pond, Misty hills, a Qingming handscroll, the 24 solar terms and the North
 
 ## Compatibility
 
-The initial verified host is **DSH 0.2.1-rc.3**, using the kernel shipped with the official macOS
-Desktop app in an isolated Web profile. `engines.dsh` is intentionally pinned to that version.
-Other releases and Windows/Linux are not yet verified. The adapter uses semantic conversation DOM
-markers; host layout/API changes need validation before widening compatibility.
+Installation requires **DSH >=0.2.1-rc.3**, with no upper bound, so later prereleases and
+stable releases are not rejected by an exact version pin. Actually tested hosts are
+**0.2.1-rc.3 and 0.2.1-rc.5** on macOS in isolated Web profiles; other versions and
+Windows/Linux remain unverified. Installation eligibility does not imply verified compatibility.
+The adapter uses semantic conversation DOM markers and leaves unknown layouts untouched;
+host API/layout changes may still require updates.
 
 ## Install
 
-**0.3.1** (Big fat whale by default) is available on npm and GitHub Releases; install by package name or use the tarball below.
+**0.3.2** fixes rejection by DSH 0.2.1-rc.5 due to the old compatibility declaration. Big fat whale remains the default.
+This is a local, unpublished version; **0.3.1** is the published npm/GitHub release.
+Until publication, install the locally built `dsh-inkpond-0.3.2.tgz`; package-name installation does not yet include this fix.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -30,7 +34,7 @@ markers; host layout/API changes need validation before widening compatibility.
    dsh-inkpond
    ```
 
-   To pin the published version, enter `dsh-inkpond@0.3.1` instead.
+   After 0.3.2 is published, enter `dsh-inkpond@0.3.2` to pin that version.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
 4. Start a new empty conversation to see Big fat whale on a fresh install; existing saved scene choices are preserved. If DSH requests a restart,
@@ -42,7 +46,7 @@ No source checkout or local compilation is needed. The compatibility limits abov
 ### Install into a Web profile with the CLI
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.1
+dsh plugin --profile web add dsh-inkpond@0.3.2
 ```
 
 For Desktop, prefer the in-app wizard above, which targets the current application's profile.
@@ -51,20 +55,22 @@ The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
 
 ### Install a Release tarball
 
-Download `dsh-inkpond-0.3.1.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases).
+Before publication, run `npm ci && npm pack` to build `dsh-inkpond-0.3.2.tgz`.
+After publication, download it from [Releases](https://github.com/shin4/inkpond-dsh/releases).
 Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.1.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.2.tgz
 ```
 
+When upgrading from 0.1.0, follow the host prompt to uninstall the old plugin, then install the 0.3.2 tarball. Appearance preferences are retained.
 Refresh the page; restart the instance if it does not hot-load. The tarball is prebuilt and
 does not compile code at installation time.
 A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences
 
-The following describes 0.3.1. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
+The following describes 0.3.2. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
 
 Open Plugins → Installed → dsh-inkpond. Select Lotus pond, Misty hills, Qingming handscroll, 24 solar terms (selected by the current date), Northern sea (waves and a whale) or Big fat whale (default; eating rice, spouting grains and reacting to the pointer);
 choose new conversations only (default) or all conversations, toggle color accents, adjust ink strength,
