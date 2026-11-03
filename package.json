@@ -1,6 +1,6 @@
 {
 	"name": "dsh-inkpond",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"description": "Interactive Chinese ink-wash backgrounds for DeepSeek Harness: lotus pond, misty hills, Qingming handscroll, 24 solar terms, Northern sea and Big fat whale.",
 	"type": "module",
 	"license": "MIT",
@@ -52,13 +52,15 @@
 	},
 	"devDependencies": {
 		"@deepseek-ai/cordis": "4.0.5",
-		"inkpond": "file:vendor/inkpond-4cb32fb.tgz",
-		"esbuild": "0.25.12",
-		"typescript": "5.9.3",
-		"react": "18.3.1",
-		"@types/react": "18.3.27",
 		"@types/node": "24.10.1",
-		"vitest": "3.2.4",
-		"jsdom": "26.1.0"
+		"@types/react": "18.3.27",
+		"@types/react-dom": "18.3.7",
+		"esbuild": "0.25.12",
+		"inkpond": "file:vendor/inkpond-4cb32fb.tgz",
+		"jsdom": "26.1.0",
+		"react": "18.3.1",
+		"react-dom": "18.3.1",
+		"typescript": "5.9.3",
+		"vitest": "3.2.4"
 	}
 }

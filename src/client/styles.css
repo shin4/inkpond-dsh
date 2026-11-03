@@ -68,3 +68,14 @@
 .dsh-inkpond-settings input[type="range"] {
 	width: 150px;
 }
+.dsh-inkpond-updates {
+	margin-top: 28px;
+	border-top: 1px solid var(--dsw-alias-border-l3);
+}
+.dsh-inkpond-updates button {
+	margin-right: 12px;
+}
+.dsh-inkpond-updates button:disabled {
+	opacity: 0.55;
+	cursor: default;
+}

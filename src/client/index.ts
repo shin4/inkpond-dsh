@@ -1,6 +1,6 @@
 import type { Context } from "@deepseek-ai/cordis";
 import { createPreferences } from "./preferences";
-import { installBackground } from "./adapter";
+import { installBackground, createUpdateAccess } from "./adapter";
 import { createSettings } from "./settings";
 import css from "./styles.css";
 
@@ -33,7 +33,7 @@ export function apply(ctx: ClientContext): void {
 		const settings = ctx.slots.inject("plugins.bundle.config", () =>
 			ctx.slots.register(
 				{ name: "plugins.bundle.config", key: "dsh-inkpond" },
-				createSettings(store),
+				createSettings(store, createUpdateAccess(ctx)),
 			),
 		);
 		return () => {

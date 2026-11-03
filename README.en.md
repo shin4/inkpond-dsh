@@ -14,15 +14,26 @@ Lotus pond, Misty hills, a Qingming handscroll, the 24 solar terms and the North
 
 Installation requires **DSH >=0.2.1-rc.3**, with no upper bound, so later prereleases and
 stable releases are not rejected by an exact version pin. Actually tested hosts are
-**0.2.1-rc.3 and 0.2.1-rc.5** on macOS in isolated Web profiles; other versions and
-Windows/Linux remain unverified. Installation eligibility does not imply verified compatibility.
+**0.2.1-rc.3 and 0.2.1-rc.5** on macOS in isolated Web profiles for backgrounds.
+The update entry was also tested in isolated **0.2.2-alpha.2**; this prerelease is
+a capability test host, not an installation requirement. Other versions and Windows/Linux remain unverified. Installation eligibility does not imply verified compatibility.
 The adapter uses semantic conversation DOM markers and leaves unknown layouts untouched;
 host API/layout changes may still require updates.
 
+## Plugin updates (0.3.3)
+
+The settings page provides a manual update entry. When the Host exposes native `listVersions` / `updateBundle`, Check for updates finds an eligible stable version and shows the installed and target versions. After confirmation, DSH installs that exact version and reports completion, a required restart, or recovery.
+No automatic checks or silent upgrades run. Leaving the page cancels its check; self-update may reload settings, so confirm the final version in native Plugins.
+
+Hosts such as DSH rc.5 show manual update instructions and Open Plugins. Tarball, Git and linked installations fall back to native management according to Host support. Appearance preferences are retained.
+The Client only calls Host update APIs; it does not contact npm, download packages or uninstall itself. A failed check is never reported as up to date.
+
+This entry is available from **0.3.3**. See the [release record](docs/release.md) for publication status.
+
 ## Install
 
-**0.3.2** fixes rejection by DSH 0.2.1-rc.5 due to the old compatibility declaration. Big fat whale remains the default.
-**0.3.2 is published on npm and GitHub Releases**; install by package name or use the tarball below.
+**0.3.3** adds the Host update entry. DSH >=0.2.1-rc.3 and the Big fat whale default are unchanged.
+The package-name and prebuilt-tarball instructions below target 0.3.3; see the [release record](docs/release.md) for publication status.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -33,11 +44,13 @@ host API/layout changes may still require updates.
    dsh-inkpond
    ```
 
-   To pin this version, enter `dsh-inkpond@0.3.2`.
+   To pin this version, enter `dsh-inkpond@0.3.3`.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
 4. Start a new empty conversation to see Big fat whale on a fresh install; existing saved scene choices are preserved. If DSH requests a restart,
    fully quit and reopen the application.
+
+pnpm 11 defaults to avoiding versions published less than 24 hours ago. On release day, a bare package name can select an older version even from the official registry; enter `dsh-inkpond@0.3.3` explicitly.
 
 The wizard installs directly from npm, independently of listings in 1024 Store or dshmarket.
 No source checkout or local compilation is needed. The compatibility limits above still apply.
@@ -45,7 +58,7 @@ No source checkout or local compilation is needed. The compatibility limits abov
 ### Install into a Web profile with the CLI
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.2
+dsh plugin --profile web add dsh-inkpond@0.3.3
 ```
 
 For Desktop, prefer the in-app wizard above, which targets the current application's profile.
@@ -54,21 +67,21 @@ The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
 
 ### Install a Release tarball
 
-Download `dsh-inkpond-0.3.2.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.2).
+Download `dsh-inkpond-0.3.3.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.3).
 Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.2.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.3.tgz
 ```
 
-When upgrading from 0.1.0, follow the host prompt to uninstall the old plugin, then install the 0.3.2 tarball. Appearance preferences are retained.
+When upgrading from 0.1.0, follow the host prompt to uninstall the old plugin, then install the 0.3.3 tarball. Appearance preferences are retained.
 Refresh the page; restart the instance if it does not hot-load. The tarball is prebuilt and
 does not compile code at installation time.
 A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences
 
-The following describes 0.3.2. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
+The following describes 0.3.3. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
 
 Open Plugins → Installed → dsh-inkpond. Select Lotus pond, Misty hills, Qingming handscroll, 24 solar terms (selected by the current date), Northern sea (waves and a whale) or Big fat whale (default; eating rice, spouting grains and reacting to the pointer);
 choose new conversations only (default) or all conversations, toggle color accents, adjust ink strength,
@@ -102,8 +115,9 @@ See the [verification record](docs/verification.md) and [release checklist](docs
 
 ## Scope and licenses
 
-This plugin adds only backgrounds and appearance preferences. It registers no model tools, reads no
-messages, sends no telemetry and makes no third-party network requests. All fonts are included; no CDN
+This plugin provides backgrounds, appearance preferences and a Host update entry. It registers no model tools,
+reads no messages and sends no telemetry. The Client does not contact external services directly;
+when the user checks or confirms an update, the DSH Host contacts the package registry and performs installation. All fonts are included; no CDN
 is needed. The host's own networking is outside this plugin's control.
 
 MIT code; renderer from [inkpond](https://github.com/shin4/inkpond). Font subsets use SIL OFL 1.1;

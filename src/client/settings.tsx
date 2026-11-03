@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { DEFAULTS, type PreferenceStore } from "./preferences";
-export function createSettings(store: PreferenceStore) {
+import { UpdateSettings, type UpdateAccess } from "./updates";
+export function createSettings(store: PreferenceStore, updates: UpdateAccess) {
 	return function Settings() {
 		const p = useSyncExternalStore(store.subscribe, store.get);
 		const zh = (document.documentElement.lang || navigator.language).startsWith(
@@ -105,6 +106,7 @@ export function createSettings(store: PreferenceStore) {
 				<button type="button" onClick={() => store.update(DEFAULTS)}>
 					{t("恢复默认", "Restore defaults")}
 				</button>
+				<UpdateSettings access={updates} zh={zh} />
 			</section>
 		);
 	};

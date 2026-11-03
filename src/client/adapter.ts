@@ -1,5 +1,105 @@
 import { createInkPond, type InkPond } from "inkpond";
 import type { Preferences, PreferenceStore } from "./preferences";
+import type { UpdateAccess, UpdateCheck, UpdateOutcome } from "./updates";
+
+const PACKAGE = "dsh-inkpond";
+type RemoteResult<T> = { ok: true; value: T } | { ok: false };
+interface VersionList {
+	status: "listed" | "refused";
+	problem?: string;
+	installed: string;
+	registry: string | null;
+	versions: {
+		version: string;
+		prerelease: boolean;
+		deprecated?: string;
+		bundle: boolean;
+		incompatible?: unknown;
+	}[];
+}
+interface Change {
+	application: string;
+}
+interface Manager {
+	listVersions?(
+		name: string,
+		options: object,
+		signal?: AbortSignal,
+	): Promise<RemoteResult<VersionList>>;
+	updateBundle?(
+		name: string,
+		version: string,
+		options: object,
+	): Promise<RemoteResult<{ to: string; result: Change; restore?: Change }>>;
+}
+interface Navigation {
+	openList(): void;
+}
+/** Optional public Host services; never query a registry or execute package management in the Client. */
+export function createUpdateAccess(ctx: {
+	get(name: string): unknown;
+}): UpdateAccess {
+	const manager = () => ctx.get("remote.pluginManager") as Manager | undefined;
+	const navigation = () =>
+		ctx.get("pluginNavigation") as Navigation | undefined;
+	const supported = () =>
+		typeof manager()?.listVersions === "function" &&
+		typeof manager()?.updateBundle === "function";
+	return {
+		supported,
+		canNavigate: () => typeof navigation()?.openList === "function",
+		openManagement: () => navigation()?.openList(),
+		async check(signal): Promise<UpdateCheck> {
+			if (!supported()) return { kind: "unsupported" };
+			try {
+				const answer = await manager()!.listVersions!(PACKAGE, {}, signal);
+				if (!answer.ok) return { kind: "failed" };
+				const list = answer.value;
+				if (list.status !== "listed")
+					return {
+						kind: list.problem === "not-updatable" ? "unmanaged" : "failed",
+					};
+				const target = list.versions.find(
+					(v) =>
+						v.bundle &&
+						!v.prerelease &&
+						!v.deprecated &&
+						v.incompatible === undefined &&
+						/^\d+\.\d+\.\d+(?:\+[\w.-]+)?$/.test(v.version),
+				);
+				return target
+					? {
+							kind: "available",
+							installed: list.installed,
+							version: target.version,
+							registry: list.registry,
+						}
+					: { kind: list.versions.length ? "blocked" : "current" };
+			} catch {
+				return { kind: "failed" };
+			}
+		},
+		async upgrade(target): Promise<UpdateOutcome> {
+			if (!supported()) return "failed";
+			try {
+				const answer = await manager()!.updateBundle!(PACKAGE, target.version, {
+					registry: target.registry,
+				});
+				if (!answer.ok || answer.value.to !== target.version) return "unknown";
+				const { result, restore } = answer.value;
+				if (result.application === "applied") return "applied";
+				if (result.application === "restart-required") return "restart";
+				if (restore)
+					return ["applied", "restart-required"].includes(restore.application)
+						? "restored"
+						: "removed";
+				return "failed";
+			} catch {
+				return "unknown";
+			}
+		},
+	};
+}
 
 export const CONTENT =
 	'[data-conversation-content][data-conversation-region="chat"]';

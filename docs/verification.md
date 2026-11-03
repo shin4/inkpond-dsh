@@ -1,5 +1,50 @@
 # Verification
 
+## Native update entry — 2026-11-03 (v0.3.3, local)
+
+- Added a manual settings entry using only optional native Host services.
+  Host-dependent bindings stay in `adapter.ts`; the Client makes no external
+  requests and adds no downloader, background polling, model tool or Host service.
+- Both `listVersions` and `updateBundle` must be present. The check offers only
+  compatible, non-deprecated stable bundle versions returned by the Host. An
+  explicitly confirmed update passes the exact version and answering registry
+  back to the Host. Network, unsupported-source, restart, recovery and unknown
+  outcomes remain distinct; failures are never reported as up to date.
+- Unmount aborts an active check and ignores late results. An upgrade already
+  handed to the Host survives the settings component being replaced; final
+  installed version is visible in native Plugins after self-update reloads it.
+- `npm run check` passed: type checking, 18 tests and build. Six new tests cover
+  old-host fallback without package mutations, version eligibility/source,
+  failure and recovery result mapping, confirmation/duplicate prevention, and
+  cancellation on disposal. Recovery outcome mapping is unit-tested; this pass
+  did not force a real failed installation or failed recovery.
+- `npm pack` contains 11 allowed files, version 0.3.3 in manifest/build metadata,
+  six offline fonts and plugin/upstream MIT plus font OFL notices. No local
+  registry, test profiles, output or development dependencies are included.
+- Real DSH 0.2.1-rc.5 in an isolated macOS Web profile: manual instructions and
+  Open Plugins rendered; the button returned to the native list. Background
+  regression retained default Big fat whale, pointer pass-through and composer
+  avoidance. Browser console had no warnings/errors.
+- Real published DSH 0.2.2-alpha.2 in an isolated macOS Web profile: used a
+  loopback-only fixture registry with synthetic 0.3.3 and 0.3.4 archives derived
+  from this build. Check showed 0.3.3 → 0.3.4. Before confirmation the installed
+  version remained 0.3.3; after confirmation the actual installed manifest and
+  saved exact dependency were 0.3.4, the plugin reloaded and native Plugins
+  showed the new version running. A saved lotus preference survived. A new
+  check reported no newer version; the browser console had no warnings/errors.
+  These synthetic versions were not published. The alpha Host is a capability
+  test, not a new minimum requirement or a recommendation to upgrade DSH.
+- After final README edits, reinstalled the final tarball on both isolated
+  Hosts, compared installed client bytes to the build, and uninstalled. Both
+  dependencies and bundle entries were removed. Test browsers, Hosts and
+  loopback registry were stopped. No credentials or model calls were used.
+- The final tarball also passed isolated installation, client-byte comparison and
+  removal with the Desktop-bundled minimum DSH 0.2.1-rc.3 CLI. No new rc.3
+  browser interaction coverage is claimed.
+- SHA256: `fb8f14b0a40463a5155c0643196c988114e1ef3e7b3605fa3fb9f1d1924d52c2`.
+- No new Windows/Linux, native desktop-shell, long-chat or future-host claim.
+  Publication status is tracked in `docs/release.md`.
+
 ## DSH rc.5 compatibility fix — 2026-11-02 (v0.3.2)
 
 - Reproduced rc.5 rejecting the original 0.1.0 tarball because its
