@@ -19,7 +19,7 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
-## v0.3.3 local validation status — 2026-11-03
+## v0.3.3 publication status — 2026-11-03
 
 - Adds a manual native Host update entry. Supports check/confirm/exact-version
   update where the Host exposes both APIs; older Hosts show native-management
@@ -28,10 +28,20 @@ Do not edit either catalog's generated READMEs. Prepared entries live in `docs/m
   inspection and isolated install/uninstall passed on rc.5 and alpha.2.
   Real browser checks cover old-host navigation and a synthetic-registry update
   on the official alpha Host; scope and limitations are in `docs/verification.md`.
-- Local artifact: `dsh-inkpond-0.3.3.tgz`.
+- Release artifact: `dsh-inkpond-0.3.3.tgz`.
   SHA256: `fb8f14b0a40463a5155c0643196c988114e1ef3e7b3605fa3fb9f1d1924d52c2`.
-- Validation complete; 0.3.3 publication is pending. The published package and
-  prepared market URL remain 0.3.2 until publication is verified.
+- Release commit: `892d1529e7899a793e85867e6b82ff80189bdb0f`; GitHub CI passed.
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.3
+  Includes the tested tarball and SHA256SUMS-0.3.3; downloaded bytes match.
+- npm `dsh-inkpond@0.3.3` is public; `latest` points to 0.3.3.
+  The registry tarball matches the tested GitHub artifact byte-for-byte.
+- The immutable tarball includes release-prepared documentation; the current
+  publication status is here and in both repository READMEs.
+- dshmarket: https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11517
+  Updates only the tarball URL to 0.3.3; maintainer merge is pending.
+- 1024 Store: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/733
+  Updated the existing PR to the 0.3.3 release. Versions are discovered
+  automatically; the existing description change awaits maintainer review.
 - Engine pin, verified minimum DSH version, defaults and preference keys are unchanged.
 
 ## v0.3.2 publication status — 2026-11-02

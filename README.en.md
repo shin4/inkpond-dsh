@@ -33,7 +33,7 @@ This entry is available from **0.3.3**. See the [release record](docs/release.md
 ## Install
 
 **0.3.3** adds the Host update entry. DSH >=0.2.1-rc.3 and the Big fat whale default are unchanged.
-The package-name and prebuilt-tarball instructions below target 0.3.3; see the [release record](docs/release.md) for publication status.
+**0.3.3 is published on npm and GitHub Releases**; install using the instructions below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 

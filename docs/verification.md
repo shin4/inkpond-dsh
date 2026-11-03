@@ -43,7 +43,8 @@
   browser interaction coverage is claimed.
 - SHA256: `fb8f14b0a40463a5155c0643196c988114e1ef3e7b3605fa3fb9f1d1924d52c2`.
 - No new Windows/Linux, native desktop-shell, long-chat or future-host claim.
-  Publication status is tracked in `docs/release.md`.
+  Published npm and GitHub tarballs match the tested release artifact byte-for-byte;
+  publication details are tracked in `docs/release.md`.
 
 ## DSH rc.5 compatibility fix — 2026-11-02 (v0.3.2)
 
