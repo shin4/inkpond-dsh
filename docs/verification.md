@@ -22,7 +22,8 @@
   browser coverage is claimed.
 - Browser and isolated Host were stopped; tarball uninstall was verified.
   No real account, model call, new host-version or native desktop-shell coverage
-  is claimed. Publication remains pending in `docs/release.md`.
+  is claimed. Public npm and GitHub tarballs match the tested artifact
+  byte-for-byte; publication is recorded in `docs/release.md`.
 - SHA256: `2fb087ebb1ba10443d46c1a04ec5b001e466554c54abd6b218a072e65bda95ad`.
 
 ## Native update entry — 2026-11-03 (v0.3.3, local)

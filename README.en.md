@@ -34,12 +34,12 @@ This entry is available from **0.3.3**. See the [release record](docs/release.md
 
 The settings footer adds “GitHub · Enjoy Inkpond? Give it a ⭐”, opening this plugin's repository in a new page when clicked.
 This is a regular link: it does not automatically request GitHub or read or change Star status.
-**0.3.4 is being prepared for publication**. The instructions below target 0.3.4; see the [release record](docs/release.md) for public availability.
+**0.3.4 is published on npm and GitHub Releases**; see the [release record](docs/release.md).
 
 ## Install
 
 **0.3.4** adds the settings repository link. DSH >=0.2.1-rc.3 and the Big fat whale default are unchanged.
-After npm and GitHub Releases publication completes, install using the instructions below.
+Install 0.3.4 using the instructions below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 

@@ -19,19 +19,33 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
-## v0.3.4 release preparation — 2026-11-04
+## v0.3.4 publication status — 2026-11-04
 
 - Adds a bilingual repository link at the bottom of plugin settings. Opening
   GitHub requires an explicit click; the link uses a new page and suppresses
   opener/referrer access. No Star API, telemetry or automatic requests are added.
-- Package and lockfile versions are 0.3.4. Publication is in progress;
-  both READMEs include release-prepared 0.3.4 install instructions.
+- Package and lockfile versions are 0.3.4. npm and GitHub publication is verified;
+  both repository READMEs describe the published 0.3.4 installation.
 - Validation: clean `npm ci`, type checking, all 18 tests, build and package
   inspection passed. The final tarball passed isolated rc.3/rc.5 installation,
   client-byte comparison and removal. Real rc.5 browser verification covered
   Chinese/English labels and explicit new-page navigation.
 - Release artifact: `dsh-inkpond-0.3.4.tgz`.
   SHA256: `2fb087ebb1ba10443d46c1a04ec5b001e466554c54abd6b218a072e65bda95ad`.
+- Release commit: `04cc202e14b1787fff579d406c8c11bec4c51bb1`.
+  GitHub CI passed: https://github.com/shin4/inkpond-dsh/actions/runs/41822782969
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.4
+  Public tarball and SHA256SUMS-0.3.4 were downloaded and verified byte-for-byte.
+- npm `dsh-inkpond@0.3.4` is public; `latest` points to 0.3.4.
+  The official npm tarball matches the validated GitHub artifact byte-for-byte.
+- The immutable tarball includes release-prepared documentation; current
+  publication status is recorded here and in both repository READMEs.
+- dshmarket: https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11980
+  Updates only the tarball URL to 0.3.4; CI and maintainer merge are pending.
+- 1024 Store: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/733
+  Updated the existing PR to 0.3.4; versions are discovered automatically.
+  Its live API manifest already reports 0.3.4. The six-scene description still
+  requires maintainer review.
 - Validation details are recorded in `docs/verification.md`.
 
 ## v0.3.3 publication status — 2026-11-03
