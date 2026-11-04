@@ -107,6 +107,18 @@ export function createSettings(store: PreferenceStore, updates: UpdateAccess) {
 					{t("恢复默认", "Restore defaults")}
 				</button>
 				<UpdateSettings access={updates} zh={zh} />
+				<p className="dsh-inkpond-repository">
+					<a
+						href="https://github.com/shin4/inkpond-dsh"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{t(
+							"GitHub · 喜欢墨池？点个 ⭐",
+							"GitHub · Enjoy Inkpond? Give it a ⭐",
+						)}
+					</a>
+				</p>
 			</section>
 		);
 	};

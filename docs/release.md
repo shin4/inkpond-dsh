@@ -4,7 +4,7 @@
 2. Install the exact tarball into an isolated DSH profile; verify activation, scene/theme controls and uninstall.
 3. Commit only source, tests, docs, lockfile and the pinned upstream dependency archive. Never include `.local`, host data, credentials or npm logs.
 4. Publish a GitHub tag/release and attach the prebuilt versioned tarball and SHA256SUMS.
-5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.3.3.tgz --access public`.
+5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.3.4.tgz --access public`.
 6. Once npm is verified, update both README install sections with the package-name command.
 7. Submit the prepared catalog entries separately. Recheck upstream contribution rules at submission time.
 
@@ -18,6 +18,21 @@
   Without npm publication the listing is browse-only. A single added entry passing static review can auto-merge.
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
+
+## v0.3.4 release preparation — 2026-11-04
+
+- Adds a bilingual repository link at the bottom of plugin settings. Opening
+  GitHub requires an explicit click; the link uses a new page and suppresses
+  opener/referrer access. No Star API, telemetry or automatic requests are added.
+- Package and lockfile versions are 0.3.4. Publication is in progress;
+  both READMEs include release-prepared 0.3.4 install instructions.
+- Validation: clean `npm ci`, type checking, all 18 tests, build and package
+  inspection passed. The final tarball passed isolated rc.3/rc.5 installation,
+  client-byte comparison and removal. Real rc.5 browser verification covered
+  Chinese/English labels and explicit new-page navigation.
+- Release artifact: `dsh-inkpond-0.3.4.tgz`.
+  SHA256: `2fb087ebb1ba10443d46c1a04ec5b001e466554c54abd6b218a072e65bda95ad`.
+- Validation details are recorded in `docs/verification.md`.
 
 ## v0.3.3 publication status — 2026-11-03
 
@@ -38,7 +53,7 @@ Do not edit either catalog's generated READMEs. Prepared entries live in `docs/m
 - The immutable tarball includes release-prepared documentation; the current
   publication status is here and in both repository READMEs.
 - dshmarket: https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/11517
-  Updates only the tarball URL to 0.3.3; maintainer merge is pending.
+  Updates only the tarball URL to 0.3.3; merged on 2026-11-03 UTC.
 - 1024 Store: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/733
   Updated the existing PR to the 0.3.3 release. Versions are discovered
   automatically; the existing description change awaits maintainer review.

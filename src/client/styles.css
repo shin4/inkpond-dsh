@@ -79,3 +79,7 @@
 	opacity: 0.55;
 	cursor: default;
 }
+.dsh-inkpond-repository a {
+	color: inherit;
+	text-underline-offset: 0.2em;
+}

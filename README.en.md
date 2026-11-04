@@ -30,10 +30,16 @@ The Client only calls Host update APIs; it does not contact npm, download packag
 
 This entry is available from **0.3.3**. See the [release record](docs/release.md) for publication status.
 
+## Repository link (0.3.4)
+
+The settings footer adds “GitHub · Enjoy Inkpond? Give it a ⭐”, opening this plugin's repository in a new page when clicked.
+This is a regular link: it does not automatically request GitHub or read or change Star status.
+**0.3.4 is being prepared for publication**. The instructions below target 0.3.4; see the [release record](docs/release.md) for public availability.
+
 ## Install
 
-**0.3.3** adds the Host update entry. DSH >=0.2.1-rc.3 and the Big fat whale default are unchanged.
-**0.3.3 is published on npm and GitHub Releases**; install using the instructions below.
+**0.3.4** adds the settings repository link. DSH >=0.2.1-rc.3 and the Big fat whale default are unchanged.
+After npm and GitHub Releases publication completes, install using the instructions below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
@@ -44,13 +50,13 @@ This entry is available from **0.3.3**. See the [release record](docs/release.md
    dsh-inkpond
    ```
 
-   To pin this version, enter `dsh-inkpond@0.3.3`.
+   To pin this version, enter `dsh-inkpond@0.3.4`.
 3. Select **Official npm registry** under the installation registry options, then click **Install**.
    Mirrors may not have synchronized a newly published version yet.
 4. Start a new empty conversation to see Big fat whale on a fresh install; existing saved scene choices are preserved. If DSH requests a restart,
    fully quit and reopen the application.
 
-pnpm 11 defaults to avoiding versions published less than 24 hours ago. On release day, a bare package name can select an older version even from the official registry; enter `dsh-inkpond@0.3.3` explicitly.
+pnpm 11 defaults to avoiding versions published less than 24 hours ago. On release day, a bare package name can select an older version even from the official registry; enter `dsh-inkpond@0.3.4` explicitly.
 
 The wizard installs directly from npm, independently of listings in 1024 Store or dshmarket.
 No source checkout or local compilation is needed. The compatibility limits above still apply.
@@ -58,7 +64,7 @@ No source checkout or local compilation is needed. The compatibility limits abov
 ### Install into a Web profile with the CLI
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.3
+dsh plugin --profile web add dsh-inkpond@0.3.4
 ```
 
 For Desktop, prefer the in-app wizard above, which targets the current application's profile.
@@ -67,21 +73,21 @@ The package is published on [npm](https://www.npmjs.com/package/dsh-inkpond).
 
 ### Install a Release tarball
 
-Download `dsh-inkpond-0.3.3.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.3).
+Download `dsh-inkpond-0.3.4.tgz` from [Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.4).
 Enter its absolute local path in the host plugin manager, or install into a regular Web profile:
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.3.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.4.tgz
 ```
 
-When upgrading from 0.1.0, follow the host prompt to uninstall the old plugin, then install the 0.3.3 tarball. Appearance preferences are retained.
+When upgrading from 0.1.0, follow the host prompt to uninstall the old plugin, then install the 0.3.4 tarball. Appearance preferences are retained.
 Refresh the page; restart the instance if it does not hot-load. The tarball is prebuilt and
 does not compile code at installation time.
 A GitHub source checkout requires `npm ci && npm run build` before installation.
 
 ## Preferences
 
-The following describes 0.3.3. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
+The following describes 0.3.4. Existing saved scene choices are preserved; clients without saved preferences and Restore defaults use Big fat whale.
 
 Open Plugins → Installed → dsh-inkpond. Select Lotus pond, Misty hills, Qingming handscroll, 24 solar terms (selected by the current date), Northern sea (waves and a whale) or Big fat whale (default; eating rice, spouting grains and reacting to the pointer);
 choose new conversations only (default) or all conversations, toggle color accents, adjust ink strength,

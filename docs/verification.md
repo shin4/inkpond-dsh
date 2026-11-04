@@ -1,5 +1,30 @@
 # Verification
 
+## Repository link — 2026-11-04 (v0.3.4, local)
+
+- Added a bilingual ordinary repository link below the update controls. No Star
+  API, automatic external request or tracking is added; background behavior,
+  engine pin, compatibility requirement and preferences are unchanged.
+- `npm run check` passed: type checking, all 18 existing tests and build.
+- `npm pack` contains 11 allowed files, version 0.3.4 in manifest/build metadata,
+  six embedded fonts and the plugin/upstream MIT and font OFL notices. No local
+  profiles, credentials, output or development dependencies are included.
+- Installed this exact tarball into a fresh isolated DSH 0.2.1-rc.5 Web profile
+  on macOS. Native Plugins showed v0.3.4 running; installed client bytes match
+  the build. The settings link and both Chinese/English labels rendered.
+- Clicking the link opened the expected repository URL in a new page with
+  `window.opener === null` and an empty referrer. GitHub navigation was fulfilled
+  by a browser route fixture, so this verifies navigation behavior, not GitHub
+  availability. The settings page loaded no GitHub resource before the click.
+- After release-prepared README edits, the final tarball was installed into
+  fresh isolated rc.5 and Desktop-bundled minimum rc.3 profiles. Client bytes
+  matched, and uninstall removed each dependency and bundle entry. No new rc.3
+  browser coverage is claimed.
+- Browser and isolated Host were stopped; tarball uninstall was verified.
+  No real account, model call, new host-version or native desktop-shell coverage
+  is claimed. Publication remains pending in `docs/release.md`.
+- SHA256: `2fb087ebb1ba10443d46c1a04ec5b001e466554c54abd6b218a072e65bda95ad`.
+
 ## Native update entry — 2026-11-03 (v0.3.3, local)
 
 - Added a manual settings entry using only optional native Host services.

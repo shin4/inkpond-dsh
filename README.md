@@ -28,10 +28,16 @@ DSH rc.5 等不支持这些接口的宿主显示手动更新说明和“打开�
 
 此入口从 **0.3.3** 提供。发布状态见 [发布记录](docs/release.md)。
 
+## 仓库入口（0.3.4）
+
+设置页底部新增「GitHub · 喜欢墨池？点个 ⭐」，点击后在新页面打开本插件仓库。
+该入口只是普通链接，不自动请求 GitHub，也不读取或修改 Star 状态。
+**0.3.4 正在准备发布**；以下安装说明针对 0.3.4，公开可用状态见 [发布记录](docs/release.md)。
+
 ## 安装
 
-**0.3.3** 新增宿主更新入口；兼容性要求仍为 DSH >=0.2.1-rc.3，默认大肥鲸。
-**0.3.3 已发布至 npm 和 GitHub Releases**，可按下方方式安装。
+**0.3.4** 新增设置页仓库链接；兼容性要求仍为 DSH >=0.2.1-rc.3，默认大肥鲸。
+npm 和 GitHub Releases 发布完成后，可按下方方式安装。
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
@@ -42,11 +48,11 @@ DSH rc.5 等不支持这些接口的宿主显示手动更新说明和“打开�
    dsh-inkpond
    ```
 
-   如需固定版本，填写 `dsh-inkpond@0.3.3`。
+   如需固定版本，填写 `dsh-inkpond@0.3.4`。
 3. 在「安装源」中选择 **npm 官方源**，点击 **安装**（Install）。新版本可能尚未同步到镜像源。
 4. 安装后新建空白会话，首次安装即可看到默认大肥鲸；已有保存偏好的客户端会保留原选择。若宿主提示重启，请完全退出并重新打开 DSH。
 
-pnpm 11 默认避开发布未满 24 小时的版本。新版本发布当天，即使选择官方源，裸包名也可能选回旧版；请显式填写 `dsh-inkpond@0.3.3`。
+pnpm 11 默认避开发布未满 24 小时的版本。新版本发布当天，即使选择官方源，裸包名也可能选回旧版；请显式填写 `dsh-inkpond@0.3.4`。
 
 此入口直接从 npm 安装，不依赖 1024 Store 或 dshmarket 是否已收录。
 无需下载源码或在本机编译。适用版本仍以本文的兼容性说明为准。
@@ -54,7 +60,7 @@ pnpm 11 默认避开发布未满 24 小时的版本。新版本发布当天，�
 ### 使用 CLI 安装到 Web profile
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.3
+dsh plugin --profile web add dsh-inkpond@0.3.4
 ```
 
 桌面版推荐使用上述应用内向导，它会安装到当前应用的 profile；
@@ -62,20 +68,20 @@ dsh plugin --profile web add dsh-inkpond@0.3.3
 
 ### 使用 Release 安装包
 
-从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.3) 下载 `dsh-inkpond-0.3.3.tgz`。
+从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.4) 下载 `dsh-inkpond-0.3.4.tgz`。
 在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.3.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.4.tgz
 ```
 
-从 0.1.0 升级时，按宿主提示先卸载旧插件，再安装 0.3.3 安装包。外观偏好会保留。
+从 0.1.0 升级时，按宿主提示先卸载旧插件，再安装 0.3.4 安装包。外观偏好会保留。
 刷新页面；若宿主未热加载，重启对应实例。安装包包含构建产物，不执行安装期编译。
 GitHub 源码 checkout 需要先 `npm ci && npm run build`，不能直接从未构建源码安装。
 
 ## 使用
 
-插件 → 已安装 → dsh-inkpond（以下为 0.3.3 行为）：
+插件 → 已安装 → dsh-inkpond（以下为 0.3.4 行为）：
 
 已有客户端保存的场景选择会保留；无保存偏好的客户端和“恢复默认”使用大肥鲸。
 
