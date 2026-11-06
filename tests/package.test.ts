@@ -2,6 +2,8 @@ import { it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import vm from "node:vm";
+import * as React from "react";
+import * as jsxRuntime from "react/jsx-runtime";
 it("loads the actual client artifact through the DSH factory with only shared React", () => {
 	execFileSync(process.execPath, ["scripts/build.mjs"]);
 	const source = readFileSync("lib/client.js", "utf8");
@@ -21,7 +23,7 @@ it("loads the actual client artifact through the DSH factory with only shared Re
 					expect(id).toBe("dsh-inkpond");
 					exports = factory((name) => {
 						expect(["react", "react/jsx-runtime"]).toContain(name);
-						return {};
+						return name === "react" ? React : jsxRuntime;
 					});
 				},
 			},
@@ -34,4 +36,5 @@ it("loads the actual client artifact through the DSH factory with only shared Re
 	expect(readFileSync("lib/licenses/OFL.txt", "utf8")).toContain(
 		"SIL OPEN FONT LICENSE",
 	);
+	expect(readFileSync("lib/licenses/tabler-MIT.txt", "utf8")).toContain("MIT License");
 });

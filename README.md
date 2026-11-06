@@ -7,6 +7,9 @@
 默认是**大肥鲸**：圆滚滚的鲸鱼在汉字海浪中游动，会游向饭碗吃饭、喷米，并响应指针互动。
 可切换莲池、山水、清明上河、二十四节气和北冥，保留输入区留白、明暗主题跟随及自动性能降级。
 
+**0.3.5**：设置区优先于简介显示，六场景直接选择，说明更精简，GitHub Star 入口高亮。
+默认值、已保存偏好和手动更新流程保留；未知宿主布局保持原顺序。发布状态见 [发布记录](docs/release.md)。
+
 ![莲池动态预览：DSH 实际运行画面，1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
 
 [查看 16:9 静态截图](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · 实际录屏，约 10 秒，莲池场景与 45% 浓度（非当前默认场景）。
@@ -14,8 +17,8 @@
 ## 兼容性
 
 安装要求为 **DSH >=0.2.1-rc.3**，不设上限，后续 rc 和正式版不会因精确版本锁定而被拒绝。
-背景功能已实测 **0.2.1-rc.3 和 0.2.1-rc.5**（macOS，隔离 Web profile）。
-更新入口另在 **0.2.2-alpha.2** 隔离宿主验收；该预发布版本只用于能力验证，并非安装要求。其他版本及 Windows/Linux 尚未验证。
+背景功能已实测 **0.2.1-rc.3、0.2.1-rc.5 和 0.2.2-rc.1**（macOS，隔离 Web profile）；本次设置页改版在 **0.2.2-rc.1** 验证。
+更新入口另在 **0.2.2-alpha.2** 隔离宿主验收；这些预发布版本不改变最低安装要求。其他版本、原生桌面壳及 Windows/Linux 尚未验证。
 允许安装不等于已验证兼容。插件依赖会话容器的语义 DOM 标记；未知布局不会挂载背景，宿主 API 或布局变更仍可能需要适配。
 
 ## 插件更新（0.3.3）
@@ -23,21 +26,20 @@
 设置页提供手动更新入口。支持宿主原生 `listVersions` / `updateBundle` 时，点击“检查更新”查找可用的稳定版本，显示当前与目标版本；确认后由 DSH 安装明确版本，并显示完成、重启或恢复结果。
 不会自动检查或静默升级。检查请求在页面卸载时取消；自更新可能重新载入设置页，请在原生插件管理中确认最终版本。
 
-DSH rc.5 等不支持这些接口的宿主显示手动更新说明和“打开插件管理”入口；从本地安装包、Git 或链接安装的插件按宿主能力降级为原生管理。外观偏好保留。
+DSH rc.5 等不支持这些接口的宿主显示手动更新说明和“插件管理”入口；从本地安装包、Git 或链接安装的插件按宿主能力降级为原生管理。外观偏好保留。
 客户端只调用宿主更新接口，不直接访问 npm、不自行下载或卸载。检查失败不会显示为“已是最新”。
 
 此入口从 **0.3.3** 提供。发布状态见 [发布记录](docs/release.md)。
 
-## 仓库入口（0.3.4）
+## GitHub Star
 
-设置页底部新增「GitHub · 喜欢墨池？点个 ⭐」，点击后在新页面打开本插件仓库。
+设置页底部高亮显示「喜欢墨池？点个 Star」，点击「Star on GitHub」会在新页面打开仓库。
 该入口只是普通链接，不自动请求 GitHub，也不读取或修改 Star 状态。
-**0.3.4 已发布至 npm 和 GitHub Releases**，详见 [发布记录](docs/release.md)。
 
 ## 安装
 
-**0.3.4** 新增设置页仓库链接；兼容性要求仍为 DSH >=0.2.1-rc.3，默认大肥鲸。
-可按下方方式安装 0.3.4。
+本版 **0.3.5** 改进设置页布局与文案，兼容性要求仍为 DSH >=0.2.1-rc.3，默认大肥鲸。
+发布状态见 [发布记录](docs/release.md)；可按下方方式安装明确版本。
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
@@ -48,11 +50,11 @@ DSH rc.5 等不支持这些接口的宿主显示手动更新说明和“打开�
    dsh-inkpond
    ```
 
-   如需固定版本，填写 `dsh-inkpond@0.3.4`。
+   如需固定版本，填写 `dsh-inkpond@0.3.5`。
 3. 在「安装源」中选择 **npm 官方源**，点击 **安装**（Install）。新版本可能尚未同步到镜像源。
 4. 安装后新建空白会话，首次安装即可看到默认大肥鲸；已有保存偏好的客户端会保留原选择。若宿主提示重启，请完全退出并重新打开 DSH。
 
-pnpm 11 默认避开发布未满 24 小时的版本。新版本发布当天，即使选择官方源，裸包名也可能选回旧版；请显式填写 `dsh-inkpond@0.3.4`。
+pnpm 11 默认避开发布未满 24 小时的版本。新版本发布当天，即使选择官方源，裸包名也可能选回旧版；请显式填写 `dsh-inkpond@0.3.5`。
 
 此入口直接从 npm 安装，不依赖 1024 Store 或 dshmarket 是否已收录。
 无需下载源码或在本机编译。适用版本仍以本文的兼容性说明为准。
@@ -60,7 +62,7 @@ pnpm 11 默认避开发布未满 24 小时的版本。新版本发布当天，�
 ### 使用 CLI 安装到 Web profile
 
 ```bash
-dsh plugin --profile web add dsh-inkpond@0.3.4
+dsh plugin --profile web add dsh-inkpond@0.3.5
 ```
 
 桌面版推荐使用上述应用内向导，它会安装到当前应用的 profile；
@@ -68,20 +70,20 @@ dsh plugin --profile web add dsh-inkpond@0.3.4
 
 ### 使用 Release 安装包
 
-从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.4) 下载 `dsh-inkpond-0.3.4.tgz`。
+从 [GitHub Releases](https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.5) 下载 `dsh-inkpond-0.3.5.tgz`。
 在 DSH 插件管理页填入本地安装包的绝对路径，或使用普通 Web profile：
 
 ```bash
-dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.4.tgz
+dsh plugin --profile web add /absolute/path/to/dsh-inkpond-0.3.5.tgz
 ```
 
-从 0.1.0 升级时，按宿主提示先卸载旧插件，再安装 0.3.4 安装包。外观偏好会保留。
+从 0.1.0 升级时，按宿主提示先卸载旧插件，再安装 0.3.5 安装包。外观偏好会保留。
 刷新页面；若宿主未热加载，重启对应实例。安装包包含构建产物，不执行安装期编译。
 GitHub 源码 checkout 需要先 `npm ci && npm run build`，不能直接从未构建源码安装。
 
 ## 使用
 
-插件 → 已安装 → dsh-inkpond（以下为 0.3.4 行为）：
+插件 → 已安装 → dsh-inkpond（以下为 0.3.5 行为）：
 
 已有客户端保存的场景选择会保留；无保存偏好的客户端和“恢复默认”使用大肥鲸。
 

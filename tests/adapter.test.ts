@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
-import { installBackground, AVOID } from "../src/client/adapter";
+import { installBackground, installSettingsLayout, AVOID } from "../src/client/adapter";
 import { createPreferences, DEFAULTS } from "../src/client/preferences";
 let dispose: (() => void) | undefined;
 let store: ReturnType<typeof createPreferences>;
@@ -35,6 +35,31 @@ function fake() {
 	}));
 	return { destroy, create };
 }
+it("places only the verified Inkpond configuration first and retracts the layout marker", async () => {
+	document.body.innerHTML = '<article data-plugin-detail="dsh-inkpond"><div style="display:flex;flex-direction:column"><section data-detail-document></section><section data-plugin-config><div class="dsh-inkpond-settings"></div></section></div></article>';
+	const parent = document.querySelector<HTMLElement>("article > div")!;
+	const original = [...parent.children];
+	let stop = installSettingsLayout();
+	try {
+		expect(parent.hasAttribute("data-dsh-inkpond-settings-first")).toBe(true);
+		expect([...parent.children]).toEqual(original);
+		stop();
+		expect(parent.hasAttribute("data-dsh-inkpond-settings-first")).toBe(false);
+		stop = installSettingsLayout();
+		parent.querySelector("[data-detail-document]")!.remove();
+		await settle();
+		expect(parent.hasAttribute("data-dsh-inkpond-settings-first")).toBe(false);
+	} finally { stop(); }
+	expect(document.querySelector("[data-dsh-inkpond-settings-first]")).toBeNull();
+});
+it("leaves unknown layouts and other plugins untouched", () => {
+	for (const [name, layout, intro] of [["other-plugin", "flex", "data-detail-document"], ["dsh-inkpond", "grid", "data-detail-document"], ["dsh-inkpond", "flex", "data-unknown"]]) {
+		document.body.innerHTML = `<article data-plugin-detail="${name}"><div style="display:${layout};flex-direction:column"><section ${intro}></section><section data-plugin-config><div class="dsh-inkpond-settings"></div></section></div></article>`;
+		const stop = installSettingsLayout();
+		try { expect(document.querySelector("[data-dsh-inkpond-settings-first]")).toBeNull(); }
+		finally { stop(); }
+	}
+});
 it("mounts Big fat whale once, avoids controls, and retracts everything on unload", async () => {
 	const { create, destroy } = fake();
 	dispose = installBackground(store, create);

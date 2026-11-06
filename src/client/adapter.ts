@@ -104,6 +104,47 @@ export function createUpdateAccess(ctx: {
 export const CONTENT =
 	'[data-conversation-content][data-conversation-region="chat"]';
 export const AVOID = "data-dsh-inkpond-avoid";
+const SETTINGS_FIRST = "data-dsh-inkpond-settings-first";
+
+/** Reorder only the verified Inkpond detail layout; never move React-owned nodes. */
+export function installSettingsLayout() {
+	const marked = new Set<HTMLElement>();
+	let scheduled = 0;
+	const sync = () => {
+		scheduled = 0;
+		const parents = new Set<HTMLElement>();
+		for (const settings of document.querySelectorAll<HTMLElement>(
+			'[data-plugin-detail="dsh-inkpond"] [data-plugin-config] .dsh-inkpond-settings',
+		)) {
+			const config = settings.closest<HTMLElement>("[data-plugin-config]")!;
+			const parent = config.parentElement;
+			const intro = config.previousElementSibling;
+			if (!parent || !intro?.hasAttribute("data-detail-document")) continue;
+			if (parent.querySelectorAll(":scope > [data-plugin-config]").length !== 1) continue;
+			const style = getComputedStyle(parent);
+			if (style.display !== "flex" || style.flexDirection !== "column") continue;
+			parents.add(parent);
+			parent.setAttribute(SETTINGS_FIRST, "");
+			marked.add(parent);
+		}
+		for (const parent of marked) if (!parents.has(parent)) {
+			parent.removeAttribute(SETTINGS_FIRST);
+			marked.delete(parent);
+		}
+	};
+	const observer = new MutationObserver(() => {
+		if (!scheduled) scheduled = requestAnimationFrame(sync);
+	});
+	observer.observe(document.body, { childList: true, subtree: true });
+	sync();
+	return () => {
+		observer.disconnect();
+		cancelAnimationFrame(scheduled);
+		for (const parent of marked) parent.removeAttribute(SETTINGS_FIRST);
+		marked.clear();
+	};
+}
+
 const HOST = "data-dsh-inkpond-host";
 export function eligible(host: HTMLElement, prefs: Preferences): boolean {
 	const phase = host.getAttribute("data-content-phase");

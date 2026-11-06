@@ -4,7 +4,7 @@
 2. Install the exact tarball into an isolated DSH profile; verify activation, scene/theme controls and uninstall.
 3. Commit only source, tests, docs, lockfile and the pinned upstream dependency archive. Never include `.local`, host data, credentials or npm logs.
 4. Publish a GitHub tag/release and attach the prebuilt versioned tarball and SHA256SUMS.
-5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.3.4.tgz --access public`.
+5. Publish that exact tarball to npm after authentication: `npm publish ./dsh-inkpond-0.3.5.tgz --access public`.
 6. Once npm is verified, update both README install sections with the package-name command.
 7. Submit the prepared catalog entries separately. Recheck upstream contribution rules at submission time.
 
@@ -18,6 +18,23 @@
   Without npm publication the listing is browse-only. A single added entry passing static review can auto-merge.
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
+
+## v0.3.5 release preparation — 2026-11-06
+
+- Redesigns settings with direct scene choices, scope/motion radio groups,
+  switches, a strength value, shorter bilingual copy and a highlighted ordinary
+  GitHub Star link. All preference defaults, saved choices and manual update
+  confirmation/cancellation/outcome behavior are retained.
+- Places Inkpond settings before its introduction using verified semantic Host
+  markers only. Unknown layouts retain the host order, and disposal clears the
+  layout marker. Covers Cordis 4.1.0 in the peer declaration without changing the
+  minimum-only DSH engine range or pinned rendering engine.
+- Package and lockfile version: 0.3.5. Clean install, 22 tests, build, package inspection and isolated rc.1
+  install/UI/uninstall validation passed; publication is pending.
+- Validation and limitations: `docs/verification.md` and `design-qa.md`.
+- Release artifact: `dsh-inkpond-0.3.5.tgz` with `SHA256SUMS-0.3.5`.
+  SHA256: `1cf375cddcc334a0c7483cd805a227ec0167bdaaefeb11785ff64a6cd19bbf74`.
+- External catalog changes are separate from this npm/GitHub release.
 
 ## v0.3.4 publication status — 2026-11-04
 

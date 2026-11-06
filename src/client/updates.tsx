@@ -81,20 +81,20 @@ export function UpdateSettings({
 			"Installed. Restart DSH to apply the update.",
 		),
 		restored: t(
-			"升级未完成，宿主已重新安装旧版；请在插件管理中确认状态。",
-			"Update did not complete. The Host reinstalled the previous version; check its status in Plugins.",
+			"旧版已恢复，请到插件管理确认状态。",
+			"Previous version restored. Check its status in Plugins.",
 		),
 		removed: t(
-			"升级和旧版恢复均未成功，请在插件管理中重新安装。",
-			"The update and recovery failed. Reinstall from Plugins.",
+			"升级及恢复失败，请到插件管理重新安装。",
+			"Update and recovery failed. Reinstall from Plugins.",
 		),
 		failed: t(
-			"升级未完成，请在插件管理中查看结果后重试。",
-			"Update did not complete. Check the result in Plugins before retrying.",
+			"升级未完成，请到插件管理查看后重试。",
+			"Update incomplete. Check Plugins before retrying.",
 		),
 		unknown: t(
-			"未能确认升级结果，请在插件管理中核对当前版本。",
-			"The update result could not be confirmed. Check the installed version in Plugins.",
+			"升级结果未确认，请到插件管理核对版本。",
+			"Update result unknown. Check the version in Plugins.",
 		),
 	};
 	return (
@@ -102,22 +102,24 @@ export function UpdateSettings({
 			className="dsh-inkpond-updates"
 			aria-label={t("插件更新", "Plugin updates")}
 		>
-			<h4>{t("插件更新", "Plugin updates")}</h4>
-			{!supported && (
-				<p>
-					{t(
-						"此宿主暂不支持一体更新。请在插件管理中卸载旧版，再按明确版本安装新版；外观偏好会保留。",
-						"This Host does not support integrated updates. Uninstall and reinstall an exact newer version in Plugins; appearance preferences are retained.",
+			<div className="dsh-inkpond-update-header">
+				<div>
+					<h4>{t("插件更新", "Plugin updates")}</h4>
+					<p>{supported
+						? t("手动检查，确认后更新。", "Check manually. Confirm before updating.")
+						: t("请到插件管理更新，外观偏好会保留。", "Update through Plugins. Appearance preferences are retained.")}</p>
+				</div>
+				<div className="dsh-inkpond-update-actions">
+					{supported && (
+						<button type="button" disabled={!!pending} onClick={runCheck}>
+							{pending === "check" ? t("正在检查…", "Checking…") : t("检查更新", "Check for updates")}
+						</button>
 					)}
-				</p>
-			)}
-			{supported && (
-				<button type="button" disabled={!!pending} onClick={runCheck}>
-					{pending === "check"
-						? t("正在检查…", "Checking…")
-						: t("检查更新", "Check for updates")}
-				</button>
-			)}
+					<button className="dsh-inkpond-text-button" type="button" disabled={!!pending || !access.canNavigate()} onClick={() => access.openManagement()}>
+						{t("插件管理", "Plugins")}
+					</button>
+				</div>
+			</div>
 			<div role="status" aria-live="polite">
 				{check?.kind === "current" && (
 					<p>{t("未发现更新版本。", "No newer version was found.")}</p>
@@ -125,23 +127,23 @@ export function UpdateSettings({
 				{check?.kind === "blocked" && (
 					<p>
 						{t(
-							"发现新版，但暂无适合当前宿主的稳定版本。请在插件管理中查看。",
-							"Newer versions exist, but no compatible stable update is available. Check Plugins for details.",
+							"暂无兼容的稳定新版，请到插件管理查看。",
+							"No compatible stable update. Check Plugins for details.",
 						)}
 					</p>
 				)}
 				{check?.kind === "unmanaged" && (
 					<p>
 						{t(
-							"当前安装来源不支持一体更新，请在插件管理中更新。",
-							"This installation source does not support integrated updates. Update through Plugins.",
+							"此安装来源请到插件管理更新。",
+							"Update this installation through Plugins.",
 						)}
 					</p>
 				)}
 				{check?.kind === "failed" && (
 					<p>
 						{t(
-							"检查失败，请重试或打开插件管理。",
+							"检查失败，请重试或到插件管理查看。",
 							"The check failed. Retry or open Plugins.",
 						)}
 					</p>
@@ -149,8 +151,8 @@ export function UpdateSettings({
 				{check?.kind === "unsupported" && (
 					<p>
 						{t(
-							"宿主更新能力暂不可用，请打开插件管理。",
-							"Host update support is unavailable. Open Plugins.",
+							"更新暂不可用，请到插件管理查看。",
+							"Updates unavailable. Open Plugins.",
 						)}
 					</p>
 				)}
@@ -162,8 +164,8 @@ export function UpdateSettings({
 				{pending === "upgrade" && (
 					<p>
 						{t(
-							"正在升级，设置页可能重新载入。请勿重复操作；完成后可在插件管理中确认版本。",
-							"Updating. This page may reload. Avoid repeating the action; check the installed version in Plugins afterwards.",
+							"正在升级，页面可能重载。请勿重复操作。",
+							"Updating. This page may reload. Do not repeat the action.",
 						)}
 					</p>
 				)}
@@ -182,8 +184,8 @@ export function UpdateSettings({
 					<p>
 						{t("确认将此插件升级到", "Update this plugin to")} {check.version}？
 						{t(
-							"宿主将执行安装，必要时提示重启。",
-							"The Host will install it and may require a restart.",
+							"安装后可能需要重启 DSH。",
+							"DSH may need to restart after installation.",
 						)}
 					</p>
 					<button type="button" onClick={upgrade}>
@@ -194,13 +196,6 @@ export function UpdateSettings({
 					</button>
 				</div>
 			)}
-			<button
-				type="button"
-				disabled={!!pending || !access.canNavigate()}
-				onClick={() => access.openManagement()}
-			>
-				{t("打开插件管理", "Open Plugins")}
-			</button>
 		</section>
 	);
 }

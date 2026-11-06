@@ -11,3 +11,7 @@ The complete license, copyright and modification notice is shipped in
 lib/licenses/OFL.txt; the upstream code license is in lib/licenses/inkpond-MIT.txt.
 
 React and Cordis are supplied by the DSH host, not bundled into the browser artifact.
+
+The settings icons are bundled from @tabler/icons-react 3.50.0
+(https://github.com/tabler/tabler-icons), under the MIT license.
+Its full copyright and license notice is shipped in lib/licenses/tabler-MIT.txt.

@@ -1,6 +1,6 @@
 import type { Context } from "@deepseek-ai/cordis";
 import { createPreferences } from "./preferences";
-import { installBackground, createUpdateAccess } from "./adapter";
+import { installBackground, createUpdateAccess, installSettingsLayout } from "./adapter";
 import { createSettings } from "./settings";
 import css from "./styles.css";
 
@@ -30,6 +30,7 @@ export function apply(ctx: ClientContext): void {
 		style.textContent = css;
 		document.head.append(style);
 		const stop = installBackground(store);
+		const stopLayout = installSettingsLayout();
 		const settings = ctx.slots.inject("plugins.bundle.config", () =>
 			ctx.slots.register(
 				{ name: "plugins.bundle.config", key: "dsh-inkpond" },
@@ -38,6 +39,7 @@ export function apply(ctx: ClientContext): void {
 		);
 		return () => {
 			settings();
+			stopLayout();
 			stop();
 			store.destroy();
 			style.remove();

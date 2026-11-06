@@ -1,5 +1,72 @@
 # Verification
 
+## v0.3.5 release artifact — 2026-11-06
+
+- Clean `npm ci`, `npm run check` (22 tests, type check and build) and `npm pack`
+  passed. Manifest and bundled build metadata are 0.3.5. The archive contains
+  12 allowed files, all plugin/upstream/Tabler MIT and font OFL notices, and six
+  embedded fonts; no local profiles, sessions, credentials or output.
+- Installed this exact tarball into a fresh isolated official DSH 0.2.2-rc.1
+  Web profile on macOS. All 12 installed files matched the archive. Neutral
+  working directory and consistent PNPM_HOME prevented test-environment package
+  self-resolution or store mismatch.
+- Cold browser startup showed native v0.3.5 running, default Big fat whale and
+  pointer pass-through. Settings appeared before the introduction. Scene/motion
+  changes, dark theme and restore defaults worked. Browser warnings/errors: zero.
+  Detailed preference, accessibility and responsive coverage from the preceding
+  redesign verification still applies; no rendering-engine changes were added.
+- The test browser and host were stopped; native uninstall removed the dependency
+  and bundle from the isolated profile. The earlier workspace preview is separate.
+- SHA256: `1cf375cddcc334a0c7483cd805a227ec0167bdaaefeb11785ff64a6cd19bbf74`.
+- This pass does not add native desktop-shell, Windows/Linux, real model,
+  long-chat, animation-cycle or failed-recovery coverage. Publication status is
+  recorded in `docs/release.md`; immutable tarballs contain release-prepared docs.
+
+## Settings redesign — 2026-11-06 (workspace, unpublished)
+
+- Implemented the approved settings design: six direct scene choices, native radio
+  groups for scope/motion, switches, strength value and a highlighted ordinary
+  GitHub Star link. Shortened bilingual settings/update copy while retaining all
+  update confirmation, cancellation, retry, recovery and unknown-result behavior.
+- At the user's request, configuration appears before the introduction. Host
+  bindings remain in `adapter.ts` and use only `data-plugin-detail`,
+  `data-plugin-config`, `data-detail-document` and the verified flex-column layout.
+  No React-owned host node is moved. Unknown layouts remain unchanged, other
+  plugin pages are untouched, and disposal retracts the layout marker. Current
+  Chromium also follows the visual order for reading/focus via `reading-flow`.
+- Expanded the Cordis peer declaration to `~4.0.5 || ~4.1.0`, covering the verified
+  old and new host families. The minimum-only DSH engine range, upstream engine
+  pin, defaults and preference keys are unchanged. The isolated profile still
+  reports a missing Cordis peer because the Host supplies it outside that profile;
+  this did not block installation or activation.
+- `npm run check` passed: type checking, 22 tests and build. Added preference-control,
+  storage-failure, safe-link and bounded-layout lifecycle coverage; the existing
+  update and background regression cases pass.
+- `npm pack` contains 12 allowed files. Plugin/upstream/Tabler MIT notices, font
+  OFL and six embedded fonts are present; local profiles, output, sessions,
+  credentials and development dependencies are absent. Every installed file was
+  compared with this exact archive.
+- Installed the tarball using official DSH 0.2.2-rc.1 in a fresh macOS Web profile.
+  The host was launched from a neutral directory with a consistent PNPM_HOME.
+  Native settings, keyboard choices, range changes, reload persistence, reset,
+  default Big fat whale, input without sending, pointer pass-through, composer
+  avoidance, dark theme and forced-colors hiding passed. Reduced-motion emulation
+  was exercised without claiming animation timing or performance measurements.
+- Native disable removed settings, styles, layout/host/avoidance markers, and
+  re-enable restored the plugin. Tarball-source update fallback and native Plugins
+  navigation passed. Update confirmation/outcome/cancellation remain unit-tested;
+  this pass did not repeat the earlier real registry upgrade or failed recovery.
+- Visual comparison passed after typography/spacing and light-selection contrast
+  corrections. Desktop dark/light and a 390px viewport were inspected; the narrow
+  settings region had no horizontal overflow. Details are in `design-qa.md`.
+- Fresh final acceptance browser had no warnings/errors. Temporary media and
+  viewport emulation were reset. The isolated loopback preview remains open for
+  review; no daily DSH profile, real account or model call was used.
+- At this initial workspace check, the redesign was not published; npm/GitHub
+  still provided the previous 0.3.4. The 0.3.5 release follow-up is recorded above.
+  No new native desktop-shell, Windows/Linux, long-chat or animation-cycle claim.
+- Final tarball SHA256: `e844e25ed7d1cdd7934374d63a3d4e690b478ccb71b848c38ecd629ce3e8816e`.
+
 ## Repository link — 2026-11-04 (v0.3.4, local)
 
 - Added a bilingual ordinary repository link below the update controls. No Star

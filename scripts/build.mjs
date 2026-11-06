@@ -75,3 +75,4 @@ await copyFile(
 	"lib/licenses/OFL.txt",
 );
 await copyFile("node_modules/inkpond/LICENSE", "lib/licenses/inkpond-MIT.txt");
+await copyFile("node_modules/@tabler/icons-react/LICENSE", "lib/licenses/tabler-MIT.txt");
