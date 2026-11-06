@@ -6,12 +6,25 @@ Interactive Chinese glyph ink-wash backgrounds for DeepSeek Harness.
 The default **Big fat whale** swims through glyph waves, eats rice, spouts grains and reacts to the pointer.
 Lotus pond, Misty hills, a Qingming handscroll, the 24 solar terms and the Northern sea are also included.
 
-**0.3.5**: settings appear before the introduction, with direct scene choices, shorter copy and a highlighted GitHub Star link.
-Defaults, saved preferences and manual update behavior are retained; unknown host layouts keep their original order. See the [release record](docs/release.md) for publication status.
+![Big fat whale live preview in DSH](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/whale-preview.gif)
 
-![Lotus pond live preview in DSH, 1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
+[View the full-size screenshot](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/whale-preview.png) · Actual capture on macOS, DSH 0.2.2-rc.1 Web, with the default Big fat whale and 45% strength. See also the [Lotus pond demo](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif).
 
-[View the 16:9 still screenshot](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · Actual capture, approximately 10 seconds, with the lotus scene and 45% strength (not the current default).
+## Get started in three steps
+
+1. In DSH, open **Plugins → Add plugin**.
+2. Enter **`dsh-inkpond@0.3.5`**, select the **Official npm registry**, and install. Restart if the host requests it.
+3. **Start a new empty conversation** to see the default Big fat whale. It appears only in new conversations by default; existing saved preferences are preserved.
+
+![Inkpond three-step installation guide](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/install-guide-en.png)
+
+For a Web profile, you can also run:
+
+```bash
+dsh plugin --profile web add dsh-inkpond@0.3.5
+```
+
+No source checkout or local compilation is needed. Inkpond does not read chat contents, register model tools or send telemetry. Full installation instructions and compatibility limits follow below.
 
 ## Compatibility
 
@@ -45,7 +58,7 @@ This is a regular link: it does not automatically request GitHub or read or chan
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 
-1. Open **Plugins → Add plugin → Install a third-party plugin** in DSH.
+1. Open **Plugins → Add plugin** in DSH.
 2. Enter the npm package name in the **Package name or address** field:
 
    ```text

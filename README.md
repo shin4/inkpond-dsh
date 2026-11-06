@@ -7,12 +7,25 @@
 默认是**大肥鲸**：圆滚滚的鲸鱼在汉字海浪中游动，会游向饭碗吃饭、喷米，并响应指针互动。
 可切换莲池、山水、清明上河、二十四节气和北冥，保留输入区留白、明暗主题跟随及自动性能降级。
 
-**0.3.5**：设置区优先于简介显示，六场景直接选择，说明更精简，GitHub Star 入口高亮。
-默认值、已保存偏好和手动更新流程保留；未知宿主布局保持原顺序。发布状态见 [发布记录](docs/release.md)。
+![大肥鲸动态预览：DSH 实际运行画面](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/whale-preview.gif)
 
-![莲池动态预览：DSH 实际运行画面，1280×720](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)
+[查看大图](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/whale-preview.png) · macOS、DSH 0.2.2-rc.1 Web 实录，默认大肥鲸、45% 浓度；另有[莲池演示](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.gif)。
 
-[查看 16:9 静态截图](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/lotus-preview.png) · 实际录屏，约 10 秒，莲池场景与 45% 浓度（非当前默认场景）。
+## 三步开始
+
+1. 在 DSH 打开 **插件 → 添加插件**。
+2. 填入 **`dsh-inkpond@0.3.5`**，选择 **npm 官方源**，点击安装；若宿主提示重启，按提示重启。
+3. **新建空白会话**，即可看到默认大肥鲸。默认仅新会话显示；已有保存偏好的客户端保留原选择。
+
+![墨池三步安装指南](https://raw.githubusercontent.com/shin4/inkpond-dsh/main/docs/images/install-guide-zh.png)
+
+Web profile 也可使用命令：
+
+```bash
+dsh plugin --profile web add dsh-inkpond@0.3.5
+```
+
+无需下载源码或本机编译。不读取聊天内容，不注册模型工具，不发送遥测。完整安装方式与兼容性范围见下文。
 
 ## 兼容性
 
@@ -43,7 +56,7 @@ DSH rc.5 等不支持这些接口的宿主显示手动更新说明和“插件�
 
 ### 桌面版或网页版：通过添加插件向导安装（推荐）
 
-1. 打开 DSH 的 **插件 → 添加插件 → 安装第三方插件**（Add plugin）。
+1. 打开 DSH 的 **插件 → 添加插件**（Add plugin）。
 2. 在向导的「包名或地址」输入框中填写 npm 包名：
 
    ```text
