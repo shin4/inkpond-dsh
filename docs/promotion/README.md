@@ -4,6 +4,17 @@ Prepared on 2026-11-06 for the DSH community and Bilibili. These are documentati
 and media changes, not a new plugin release. npm and GitHub Release 0.3.5 remain
 the published distribution.
 
+## Publication record
+
+- Official DSH community: https://github.com/deepseek-ai/deepseek-harness/discussions/12419
+  Published in Show Your Plugins! on 2026-11-06; source body, author and category
+  were read back and verified. Future updates should use this topic.
+- Bilibili: final video, cover and copy are prepared. Upload is pending the
+  user's confirmation of the upload page's agreement notice; no upload or
+  publication is claimed yet.
+- Public assets and README changes: commit `2f45f53488598e36ba041834d2a314257c58f291`.
+  [CI passed](https://github.com/shin4/inkpond-dsh/actions/runs/42194520679).
+
 ## Public assets
 
 - [Default Big fat whale GIF](../images/whale-preview.gif): 14 seconds, 1280×720,
@@ -41,6 +52,9 @@ The plugin was installed from a locally packed tarball into an isolated
 confirmed MIT, OFL and Tabler notices, with host state, captures and working
 material excluded. Runtime files, package manifest, patch and notices match the
 published 0.3.5 tarball byte-for-byte; the local package's documentation differs.
+The final documentation tarball also installed and uninstalled successfully in
+a second isolated profile. Both recording/rendering browser sessions and the
+loopback servers were stopped after export.
 
 Private capture inputs and review frames are under ignored
 `output/playwright/promotion`; isolated host data and logs are under ignored
