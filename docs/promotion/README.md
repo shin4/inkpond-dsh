@@ -9,9 +9,11 @@ the published distribution.
 - Official DSH community: https://github.com/deepseek-ai/deepseek-harness/discussions/12419
   Published in Show Your Plugins! on 2026-11-06; source body, author and category
   were read back and verified. Future updates should use this topic.
-- Bilibili: final video, cover and copy are prepared. Upload is pending the
-  user's confirmation of the upload page's agreement notice; no upload or
-  publication is claimed yet.
+- Bilibili: https://www.bilibili.com/video/BV1vT4B6KExv/
+  Submitted on 2026-11-06 after the user confirmed the upload agreement notice.
+  Upload, 1080p transcoding and moderation are complete, as verified in the
+  Creator Center progress page. The category is Artificial Intelligence and
+  the content declaration discloses marketing information.
 - Public assets and README changes: commit `2f45f53488598e36ba041834d2a314257c58f291`.
   [CI passed](https://github.com/shin4/inkpond-dsh/actions/runs/42194520679).
 
@@ -28,7 +30,9 @@ the published distribution.
   Screenshots/cards are interleaved with real-time screen recordings. No
   installation progress, model response or successful message send is simulated.
 - [Bilibili cover](../media/bilibili-cover.png): an actual 80% capture excerpt
-  with deterministic typography; not a generated product mockup.
+  with deterministic typography and margins that preserve the title and whale
+  in Bilibili's 4:3 and 16:9 views. Both crops were checked in the upload editor
+  and synchronized. The video's opening card retains its wider 16:9 layout.
 
 ## Copy
 
@@ -63,7 +67,8 @@ Private capture inputs and review frames are under ignored
 
 To reproduce the cards, run `python3 docs/promotion/render_cards.py` from the
 repository root. Serve the generated directory on loopback and capture each
-HTML card at 1600×900, and the three caption strips at 1920×112. Screenshots
+HTML card at 1600×900 (including the separate `video-title` card), and the three
+caption strips at 1920×112. Screenshots
 require system Chinese fonts; the cover requires its original local capture.
 `python3 docs/promotion/assemble_video.py` then assembles the six segments with
 ffmpeg; it needs the documented local capture inputs. The final file is copied
@@ -74,6 +79,9 @@ Review covered Chinese/English text fit, installation source/package name,
 new-conversation guidance, five timeline frames, 40-second duration, codec/frame
 size, and actual strength labels. Native desktop shells and Windows/Linux are
 not newly claimed as tested.
+Separating the safe-area thumbnail from the video title card was verified by
+re-exporting the full video: its bytes still match the submitted/public MP4,
+SHA256 `4a3fd5a9508393b11aa5a7da3fda8d76a2c1b35c0f1dcac7c2c3249a883293b7`.
 
 ## Follow-up measurement
 

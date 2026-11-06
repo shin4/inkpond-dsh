@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "output/playwright/promotion"
 
 segments = [
-    ("bilibili-cover.png", 3, None),
+    ("video-title.png", 3, None),
     ("whale-detail.webm", 12, "大肥鲸：游动、吃饭与指针互动｜80% 浓度演示，默认 45%"),
     ("lotus.webm", 6, "换个场景：莲池｜默认 45% 浓度"),
     ("settings.png", 5, "六个场景直接选择｜默认仅新会话，可调浓度与动画"),

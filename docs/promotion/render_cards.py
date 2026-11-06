@@ -25,9 +25,13 @@ p{font-size:23px;line-height:1.6;color:#536661;margin:12px 0}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:26px;letter-spacing:-.7px;color:#153e37;background:#edf3ec;border-radius:10px;display:inline-block;padding:13px 15px;white-space:nowrap}
 .note{font-size:20px;line-height:1.55;color:#697972}.footer{position:absolute;bottom:48px;left:72px;right:72px;display:flex;justify-content:space-between;font-size:18px;color:#687872}
 .pill{display:inline-block;background:#e5eee4;border-radius:30px;padding:9px 18px;font-size:21px;color:#28594f}
-.cover h1{font-size:100px;line-height:1.15;margin-top:54px}.cover .copy{position:relative;z-index:1;width:650px}
-.whale{position:absolute;right:60px;top:170px;width:700px;height:520px;background-color:white;background-repeat:no-repeat;background-size:2000px 1125px;background-position:-880px -20px;border:1px solid #d7e0d7;border-radius:30px}
+.cover{padding-left:230px;padding-right:230px}.cover h1{font-size:84px;line-height:1.15;margin-top:54px}.cover .copy{position:relative;z-index:1;width:550px}
+.cover .footer{left:230px;right:230px;font-size:15px}
+.whale{position:absolute;right:220px;top:200px;width:520px;height:470px;background-color:white;background-repeat:no-repeat;background-size:1800px 1012.5px;background-position:-800px -20px;border:1px solid #d7e0d7;border-radius:30px}
 .capture-label{position:absolute;bottom:24px;left:24px;font-size:18px;background:#f5f4ef;padding:10px 16px;border-radius:20px;color:#536661}
+.video-title{padding-left:72px;padding-right:72px}.video-title h1{font-size:100px}.video-title .copy{width:650px}
+.video-title .whale{right:60px;top:170px;width:700px;height:520px;background-size:2000px 1125px;background-position:-880px -20px}
+.video-title .footer{left:72px;right:72px;font-size:18px}
 .end h1{font-size:80px;margin-top:80px}.end code{font-size:48px;padding:24px 32px;margin-top:28px}.end .sub{font-size:32px;margin-top:30px}
 """
 
@@ -59,13 +63,15 @@ write("install-guide-en", """
 """, "en")
 
 whale = "whale-detail.png"
-write("bilibili-cover", f"""
+cover_html = f"""
 <main class="page cover"><div class="brand">墨池 / INKPOND</div><div class="copy">
 <h1>在 DSH 里<br>养一只<br>水墨鲸鱼。</h1>
 <p class="sub">汉字绘成的鲸鱼，会游、会吃饭。<br>六场景 · 开源插件</p></div>
 <div class="whale" style="background-image:url('{whale}')"><span class="capture-label">实际画面局部 · 80% 浓度</span></div>
 <footer class="footer"><span>DeepSeek Harness 社区插件 · 非官方</span><span>墨池 0.3.5 / macOS Web 实录</span></footer></main>
-""")
+"""
+write("bilibili-cover", cover_html)
+write("video-title", cover_html.replace('class="page cover"', 'class="page cover video-title"'))
 
 write("video-end", """
 <main class="page end"><div class="brand">墨池 / INKPOND</div><h1>下一段对话，从一池水墨开始。</h1>
@@ -88,4 +94,4 @@ for index, caption in enumerate([
         f'</style><h1>{caption}</h1><p>墨池 0.3.5 · macOS / DSH 0.2.2-rc.1 Web 实录</p></html>',
         encoding="utf-8")
 
-print("Wrote four HTML cards and three caption strips to output/playwright/promotion")
+print("Wrote five HTML cards and three caption strips to output/playwright/promotion")

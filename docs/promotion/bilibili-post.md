@@ -24,4 +24,8 @@ npm：https://www.npmjs.com/package/dsh-inkpond
 独立社区插件，与 DeepSeek 官方无隶属关系。代码 MIT；绘制核心来自独立 inkpond，字体采用 SIL OFL。
 视频为真实宿主录屏配说明卡片，无配乐、无配音。欢迎反馈安装是否顺利，以及喜欢哪个场景。
 
-标签：DeepSeek Harness、DSH、开源、插件、水墨、软件分享
+标签：DSH、水墨、开源、DeepSeek、插件、安装教程
+
+分区：人工智能
+
+创作声明：内容含营销信息
