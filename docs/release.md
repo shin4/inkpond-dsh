@@ -19,7 +19,7 @@
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
-## v0.3.5 release preparation — 2026-11-06
+## v0.3.5 publication status — 2026-11-06
 
 - Redesigns settings with direct scene choices, scope/motion radio groups,
   switches, a strength value, shorter bilingual copy and a highlighted ordinary
@@ -30,10 +30,21 @@ Do not edit either catalog's generated READMEs. Prepared entries live in `docs/m
   layout marker. Covers Cordis 4.1.0 in the peer declaration without changing the
   minimum-only DSH engine range or pinned rendering engine.
 - Package and lockfile version: 0.3.5. Clean install, 22 tests, build, package inspection and isolated rc.1
-  install/UI/uninstall validation passed; publication is pending.
+  install/UI/uninstall validation passed. npm and GitHub publication is verified.
 - Validation and limitations: `docs/verification.md` and `design-qa.md`.
 - Release artifact: `dsh-inkpond-0.3.5.tgz` with `SHA256SUMS-0.3.5`.
   SHA256: `1cf375cddcc334a0c7483cd805a227ec0167bdaaefeb11785ff64a6cd19bbf74`.
+- Release commit: `0a34be6a48ceb6ca913cbdd3ea0206d3a4618aa1`.
+  Main CI passed: https://github.com/shin4/inkpond-dsh/actions/runs/42154896469
+  Tag CI passed: https://github.com/shin4/inkpond-dsh/actions/runs/42155024657
+- GitHub Release: https://github.com/shin4/inkpond-dsh/releases/tag/v0.3.5
+  It is public, stable and Latest. Both public assets were downloaded; tarball
+  and SHA256SUMS match the tested local artifacts byte-for-byte.
+- npm `dsh-inkpond@0.3.5` is public and `latest` points to 0.3.5. After npm's
+  publication processing completed, the registry tarball was downloaded and
+  matched the tested GitHub tarball byte-for-byte.
+- Both repository READMEs now describe published 0.3.5. The immutable tarball
+  contains release-prepared documentation; live status is recorded here.
 - External catalog changes are separate from this npm/GitHub release.
 
 ## v0.3.4 publication status — 2026-11-04

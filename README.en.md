@@ -41,7 +41,7 @@ This is a regular link: it does not automatically request GitHub or read or chan
 ## Install
 
 **0.3.5** improves the settings layout and copy. DSH >=0.2.1-rc.3 and the Big fat whale default are unchanged.
-See the [release record](docs/release.md) for publication status; install an exact version using the instructions below.
+**0.3.5 is published on npm and GitHub Releases**; see the [release record](docs/release.md). Install an exact version using the instructions below.
 
 ### Desktop or Web: use the Add plugin wizard (recommended)
 

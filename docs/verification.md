@@ -18,6 +18,8 @@
 - The test browser and host were stopped; native uninstall removed the dependency
   and bundle from the isolated profile. The earlier workspace preview is separate.
 - SHA256: `1cf375cddcc334a0c7483cd805a227ec0167bdaaefeb11785ff64a6cd19bbf74`.
+- npm and public GitHub Release downloads both match this exact tarball; npm
+  `latest` and GitHub Latest both point to 0.3.5. Source/main and tag CI passed.
 - This pass does not add native desktop-shell, Windows/Linux, real model,
   long-chat, animation-cycle or failed-recovery coverage. Publication status is
   recorded in `docs/release.md`; immutable tarballs contain release-prepared docs.
