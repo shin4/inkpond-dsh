@@ -16,6 +16,8 @@
 - 1024Store: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/CONTRIBUTING.md
   Add one `catalog/plugins/shin4--inkpond-dsh.json`, with the actual submission date.
   Without npm publication the listing is browse-only. A single added entry passing static review can auto-merge.
+  Existing-entry updates preserve the original added date and require maintainer review;
+  npm versions are discovered automatically, without a catalog version field.
 
 Do not edit either catalog's generated READMEs. Prepared entries live in `docs/market`.
 
@@ -45,7 +47,14 @@ Do not edit either catalog's generated READMEs. Prepared entries live in `docs/m
   matched the tested GitHub tarball byte-for-byte.
 - Both repository READMEs now describe published 0.3.5. The immutable tarball
   contains release-prepared documentation; live status is recorded here.
-- External catalog changes are separate from this npm/GitHub release.
+- dshmarket: https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/12505
+  Updates only the pinned tarball URL from 0.3.4 to 0.3.5, following merged #11980.
+  The PR is mergeable; its automatic check and maintainer merge are pending.
+- 1024 Store: https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/733
+  Updated the existing PR title and release evidence to 0.3.5. Its single-file
+  six-scene description change remains mergeable, with static review passed.
+  The live detail API reports manifest 0.3.5; the curated description awaits
+  maintainer review. No duplicate PR, empty commit or catalog version field is added.
 
 ## v0.3.4 publication status — 2026-11-04
 
