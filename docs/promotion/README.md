@@ -16,6 +16,22 @@ the published distribution.
   the content declaration discloses marketing information.
 - Public assets and README changes: commit `2f45f53488598e36ba041834d2a314257c58f291`.
   [CI passed](https://github.com/shin4/inkpond-dsh/actions/runs/42194520679).
+- V2EX Share Your Creations: [draft prepared](v2ex-post.md), not published.
+  Posting requires a signed-in, activated account. The current
+  [registration page](https://edge.v2ex.com/signup) states that new Google
+  registrations require an invitation code for activation (checked 2026-11-06).
+  Account setup is handled by the account owner. Once access is available,
+  use the first heading as the topic title, preview the remaining Markdown body
+  in [Share Your Creations](https://www.v2ex.com/go/create), and verify the image
+  and install command before submitting. The [FAQ](https://www.v2ex.com/faq)
+  welcomes original projects and discourages repetitive link promotion.
+- Additional directory, `2BingLing/dsh-market`:
+  https://github.com/2BingLing/dsh-market/issues/346
+  Inkpond was already listed; the existing snapshot still referenced 0.3.2.
+  Submitted the supported data-fix template with the `submission` label to add
+  author copy, the six-scene description and exact npm install command. The
+  body/label were read back and verified. The issue is open and the next
+  directory pipeline has not yet been verified as applying the change.
 
 ## Public assets
 
@@ -42,6 +58,10 @@ the published distribution.
   one project per topic, an explicit unofficial label, real integration, source,
   introduction and screenshots. Update this single topic for future releases.
 - [Bilibili title, description, chapters and tags](bilibili-post.md).
+- [V2EX title and post body](v2ex-post.md), adapted for a developer sharing an
+  original project rather than a release announcement.
+- [Additional directory data-fix submission](dsh-market-data-fix.md), following
+  that project's [contribution rules](https://github.com/2BingLing/dsh-market/blob/master/CONTRIBUTING.md).
 
 The primary action is installation. Both READMEs show the actual package name
 and emphasize starting a new empty conversation. Saved preferences and verified
